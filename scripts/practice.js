@@ -16,8 +16,7 @@ function homeListener(){
     const homeButton = document.getElementById('toggle')
     homeButton.addEventListener('click', (event) => {
         event.preventDefault();
-        console.log(homeButton)
-        console.log(main)
+        console.log("check 1 2")
     })
 }
 
