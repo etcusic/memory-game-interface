@@ -1,14 +1,16 @@
-#top-row {  margin-top: 2% }
-.card { height: 100px   }
-#welcome-card { margin-top: 3%  }
+/* #body {} */
+#header { margin-bottom: 2%;}
 #main { height: 580px   }
-
 #footer {
     float: bottom;
     font-size: 20px;
     text-align: center;
     margin-top: 5%;
 }
+
+#top-row {  margin-top: 2% }
+.quiz { height: 100px   }
+#welcome-card { margin-top: 3%  }
 
 .responsive-image {
     float: left;
@@ -24,7 +26,6 @@
     margin-bottom: 5%;
 }
 
-
 .header {
     margin-top: 0px;
     height: 195px;
@@ -33,6 +34,7 @@
 }
 
 .quiz-cards {
+    height: 100px;
     font-size: 35px;
     margin-bottom: 1%;
 }
