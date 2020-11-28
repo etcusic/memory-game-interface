@@ -2,6 +2,11 @@
     margin-top: 2%;
 }
 
+#footer {
+    float: bottom;
+    font-size: 30px;
+}
+
 .responsive-image {
     float: left;
     max-width: 100%;
