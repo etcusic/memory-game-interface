@@ -36,5 +36,7 @@
 .quiz-cards {
     height: 100px;
     font-size: 35px;
+    /* text: ;  */
     margin-bottom: 1%;
+    background-color: #89CFF0;
 }
