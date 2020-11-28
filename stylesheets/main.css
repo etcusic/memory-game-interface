@@ -1,15 +1,13 @@
-#top-row {
-    margin-top: 2%;
-}
-
-/* .row {
-    height: 100px;
-} */
+#top-row {  margin-top: 2% }
+.card { height: 100px   }
+#welcome-card { margin-top: 3%  }
+#main { height: 580px   }
 
 #footer {
     float: bottom;
     font-size: 20px;
     text-align: center;
+    margin-top: 5%;
 }
 
 .responsive-image {
@@ -26,13 +24,6 @@
     margin-bottom: 5%;
 }
 
-#welcome-card {
-    margin-top: 3%;
-}
-
-.card {
-    height: 100px;
-}
 
 .header {
     margin-top: 0px;
