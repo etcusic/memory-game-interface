@@ -1,5 +1,5 @@
 const practiceArray = [
-    "card1",
+    "Don't forget to set a 35 character limit",
     "card2",
     "card3",
     "card4",
@@ -42,6 +42,3 @@ function displayCards(array){
     })
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    displayCards(practiceArray)
-})

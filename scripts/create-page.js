@@ -146,8 +146,3 @@ function setCreatorPage(){
     mainDiv.appendChild(formWrapper())
     console.log('seriously?')
 }
-
-// DOM Loader
-// document.addEventListener("DOMContentLoaded", () => {
-//     setCreatorPage()
-// })
