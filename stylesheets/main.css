@@ -1,12 +1,12 @@
 /* #body {} */
 #header { margin-bottom: 2%;}
 #main { height: 580px   }
-#footer {
+/* #footer {
     float: bottom;
     font-size: 20px;
     text-align: center;
     margin-top: 5%;
-}
+} */
 
 #top-row {  margin-top: 2% }
 .quiz { height: 100px   }
@@ -16,7 +16,6 @@
 .baby-blue {   background-color: #89CFF0    }
 
 .responsive-image {
-    float: left;
     max-width: 100%;
     height: auto;
     object-fit: cover;
