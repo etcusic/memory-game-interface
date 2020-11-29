@@ -12,11 +12,19 @@
 .quiz { height: 100px   }
 #welcome-card { margin-top: 3%  }
 
+.fiver {    margin-top: 5%  }
+.baby-blue {   background-color: #89CFF0    }
+
 .responsive-image {
     float: left;
     max-width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.home-cards {
+    font-size: 30px;
+    font-weight: bold;
 }
 
 #toggle {
@@ -36,7 +44,7 @@
 .quiz-cards {
     height: 100px;
     font-size: 35px;
-    /* text: ;  */
+    text-align: center; 
     margin-bottom: 1%;
     background-color: #89CFF0;
 }
