@@ -148,6 +148,6 @@ function setCreatorPage(){
 }
 
 // DOM Loader
-document.addEventListener("DOMContentLoaded", () => {
-    setCreatorPage()
-})
+// document.addEventListener("DOMContentLoaded", () => {
+//     setCreatorPage()
+// })

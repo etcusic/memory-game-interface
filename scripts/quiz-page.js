@@ -18,7 +18,7 @@ const practiceArray = [
     "card17",
     "card18",
     "card19",
-    "card20ß"
+    "card20"
 ]
 
 const cardWrapper = function(card){
@@ -34,3 +34,14 @@ const quizCard = function(content){
     newDiv.innerText = content
     return newDiv
 }
+
+function displayCards(array){
+    const mainDiv = document.getElementById('top-row')
+    array.forEach(function(e){
+        mainDiv.appendChild(cardWrapper(quizCard(e)))
+    })
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    displayCards(practiceArray)
+})
