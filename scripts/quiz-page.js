@@ -1,6 +1,6 @@
 const practiceArray = [
     "Don't forget to set a 35 character limit",
-    "card2",
+    "15 characters for title",
     "card3",
     "card4",
     "card5",
@@ -36,9 +36,11 @@ const quizCard = function(content){
 }
 
 function displayCards(array){
-    const mainDiv = document.getElementById('quiz-page-wrapper')
+    const divWrapper = document.getElementById('quiz-page-wrapper')
     array.forEach(function(e){
-        mainDiv.appendChild(cardWrapper(quizCard(e)))
+        divWrapper.appendChild(cardWrapper(quizCard(e)))
     })
+    //comment this out to implement with rest of site
+    divWrapper.style.display = 'block'
 }
 

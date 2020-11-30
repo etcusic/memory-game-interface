@@ -47,7 +47,7 @@ const inputWrapper = function(){
 
 function lotsOfInputs(){
     const inputBlock = document.getElementById('input-block')
-    for(let i = 0; i < 9; i++){
+    for(let i = 0; i < 3; i++){
         inputBlock.appendChild(inputWrapper())
     }
 }
