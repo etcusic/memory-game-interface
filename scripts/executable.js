@@ -11,6 +11,8 @@ const one = document.getElementById('landing-page-wrapper')
 const two = document.getElementById('base-page-wrapper')
 const three = document.getElementById('create-page-wrapper')
 const four = document.getElementById('quiz-page-wrapper')
+const mainHeader = document.getElementById('main-header')
+const gameHeader = document.getElementById('game-header')
 
 function buttonOne(){
     document.querySelectorAll('.landing-page-button').forEach(item => {
@@ -19,6 +21,8 @@ function buttonOne(){
             two.style.display = "none"
             three.style.display = "none"
             four.style.display = "none"
+            mainHeader.style.display = "block"
+            gameHeader.style.display = "none"
         })
     })
 }
@@ -30,6 +34,8 @@ function buttonTwo(){
             two.style.display = "block"
             three.style.display = "none"
             four.style.display = "none"
+            mainHeader.style.display = "block"
+            gameHeader.style.display = "none"
         })
     })
 }
@@ -41,6 +47,8 @@ function buttonThree(){
             two.style.display = "none"
             three.style.display = "block"
             four.style.display = "none"
+            mainHeader.style.display = "block"
+            gameHeader.style.display = "none"
         })
     })
 }
@@ -52,6 +60,8 @@ function buttonFour(){
             two.style.display = "none"
             three.style.display = "none"
             four.style.display = "block"
+            mainHeader.style.display = "none"
+            gameHeader.style.display = "block"
         })
     })
 }

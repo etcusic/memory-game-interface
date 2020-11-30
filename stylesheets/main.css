@@ -1,4 +1,10 @@
-/* #body {} */
+#landing-page-wrapper { display: block   }
+#main-header {  display: block    }
+#base-page-wrapper {    display: none   }
+#create-page-wrapper {  display: none }
+#quiz-page-wrapper {    display: none   }
+#game-header {  display: none }
+
 #header { margin-bottom: 2%;}
 #main { height: 580px   }
 /* #footer {
@@ -48,18 +54,3 @@
     background-color: #89CFF0;
 }
 
-#landing-page-wrapper {
-    display: block;
-}
-
-#base-page-wrapper {
-    display: none;
-}
-
-#create-page-wrapper {
-    display: none;
-}
-
-#quiz-page-wrapper {
-    display: none;
-}
