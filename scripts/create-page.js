@@ -18,7 +18,7 @@ const kermitWindowDiv = function(){
 const kermitDestruction = function(){
     const newDiv = document.createElement('div')
     newDiv.setAttribute('class', 'card-content center-align baby-blue')
-    newDiv.innerText = "No rush - Kermit can plot your destruction while you work"
+    newDiv.innerText = "Take your time. Kermit can plot your destruction while you work"
     return newDiv
 }
 
@@ -127,7 +127,6 @@ const formTag = function(){
     const form = document.createElement('form')
     form.setAttribute('id', 'deck-creator')
     form.appendChild(titleWrapper())
-    // form.appendChild(divWrapper())
     lotsOfInputs(form)
     form.appendChild(buttonDiv())
     return form
@@ -144,5 +143,4 @@ function setCreatorPage(){
     const mainDiv = document.getElementById('top-row')
     mainDiv.appendChild(windowKermit())
     mainDiv.appendChild(formWrapper())
-    console.log('seriously?')
 }

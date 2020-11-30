@@ -47,3 +47,11 @@
     margin-bottom: 1%;
     background-color: #89CFF0;
 }
+
+#landing-page-wrapper {
+    display: block;
+}
+
+#base-page-wrapper {
+    display: none;
+}
