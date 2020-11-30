@@ -36,7 +36,7 @@ const quizCard = function(content){
 }
 
 function displayCards(array){
-    const mainDiv = document.getElementById('top-row')
+    const mainDiv = document.getElementById('quiz-page-wrapper')
     array.forEach(function(e){
         mainDiv.appendChild(cardWrapper(quizCard(e)))
     })

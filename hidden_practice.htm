@@ -14,7 +14,11 @@
     <div class="header section light-blue darken-4 white-text center-align">
         QUIZZLATOR
 
-        <button id='hide-n-seek' class="btn-large deep-orange lighten-4 white-text">Hide and Seek</button>
+        <button id='one' class="btn-large light-blue lighten-2 white-text">1</button>
+        <button id='two' class="btn-large light-blue lighten-2 white-text">2</button>
+        <button id='three' class="btn-large light-blue lighten-2 white-text">3</button>
+        <button id='four' class="btn-large light-blue lighten-2 white-text">4</button>
+
     </div>
 
 
@@ -68,8 +72,53 @@
             </div>
         </div>
 
+        <div id='create-page-wrapper'>
+            <div class='col s3 fiver'>
+                <div class='card'>
+                    <div class="card-image">
+                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhoWqE2Ld_pZos1i3W31M8kamLtjbV75XWEg&usqp=CAU'>
+                    </div>
+                    <div class="card-content center-align baby-blue">
+                        Take your time. Kermit can plot your destruction while you work
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col s7 push-s1 fiver baby-blue">
+                <form id="deck-creator">
+                    <div id='deck-title' class="row">
+                        <div class="input-field col s8 fiver">
+                            <input id="title" type="text" data-length="35">
+                            <label for='title'>Title</label>
+                        </div>
+                    </div>
+                    
+                    <div id='input-block'>
+                        <div class="row card-input">
+                            <div class="input-field col s6">
+                                <input type="text">
+                                <label>side A</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input type="text">
+                                <label>side B</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <button type='submit' class="btn-small waves-effect light-blue darken-4">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id='quiz-page-wrapper'></div>
+
     </div>
 </main>
+
+</body>
 
 <link rel="stylesheet" href="stylesheets/main.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -78,7 +127,5 @@
 <script src="scripts/create-page.js"></script>
 <script src="scripts/quiz-page.js"></script>
 <script src="scripts/executable.js"></script>
-
-</body>
 
 </html>

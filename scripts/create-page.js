@@ -2,40 +2,40 @@
 
 // create the ability to press tab and make a new input rather than propogate 20
 
-const kermitWindowImg = function(){
-    const img = document.createElement('img')
-    img.setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhoWqE2Ld_pZos1i3W31M8kamLtjbV75XWEg&usqp=CAU')
-    return img
-}
+// const kermitWindowImg = function(){
+//     const img = document.createElement('img')
+//     img.setAttribute('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhoWqE2Ld_pZos1i3W31M8kamLtjbV75XWEg&usqp=CAU')
+//     return img
+// }
 
-const kermitWindowDiv = function(){
-    const newDiv = document.createElement('div')
-    newDiv.setAttribute('class', 'card-image')
-    newDiv.appendChild(kermitWindowImg())
-    return newDiv
-}
+// const kermitWindowDiv = function(){
+//     const newDiv = document.createElement('div')
+//     newDiv.setAttribute('class', 'card-image')
+//     newDiv.appendChild(kermitWindowImg())
+//     return newDiv
+// }
 
-const kermitDestruction = function(){
-    const newDiv = document.createElement('div')
-    newDiv.setAttribute('class', 'card-content center-align baby-blue')
-    newDiv.innerText = "Take your time. Kermit can plot your destruction while you work"
-    return newDiv
-}
+// const kermitDestruction = function(){
+//     const newDiv = document.createElement('div')
+//     newDiv.setAttribute('class', 'card-content center-align baby-blue')
+//     newDiv.innerText = "Take your time. Kermit can plot your destruction while you work"
+//     return newDiv
+// }
 
-const windowKermitCard = function(){
-    const newDiv = document.createElement('div')
-    newDiv.setAttribute('class', 'card')
-    newDiv.appendChild(kermitWindowDiv())
-    newDiv.appendChild(kermitDestruction())
-    return newDiv
-}
+// const windowKermitCard = function(){
+//     const newDiv = document.createElement('div')
+//     newDiv.setAttribute('class', 'card')
+//     newDiv.appendChild(kermitWindowDiv())
+//     newDiv.appendChild(kermitDestruction())
+//     return newDiv
+// }
 
-const windowKermit = function(){
-    const newDiv = document.createElement('div')
-    newDiv.setAttribute('class', 'col s3 fiver')
-    newDiv.appendChild(windowKermitCard())
-    return newDiv
-}
+// const windowKermit = function(){
+//     const newDiv = document.createElement('div')
+//     newDiv.setAttribute('class', 'col s3 fiver')
+//     newDiv.appendChild(windowKermitCard())
+//     return newDiv
+// }
 
 const textInput = function(){
     const inputTag = document.createElement('input')
@@ -43,11 +43,11 @@ const textInput = function(){
     return inputTag
 }
 
-const titleLabel = function(){
-    const labelTag = document.createElement('label')
-    labelTag.innerText = "Title"
-    return labelTag
-}
+// const titleLabel = function(){
+//     const labelTag = document.createElement('label')
+//     labelTag.innerText = "Title"
+//     return labelTag
+// }
 
 const labelA = function(){
     const labelTag = document.createElement('label')
@@ -77,7 +77,7 @@ const inputBDiv = function(){
     return newDiv
 }
 
-const divWrapper = function(){
+const inputWrapper = function(){
     const newDiv = document.createElement('div')
     newDiv.setAttribute('class', 'row card-input')
     newDiv.appendChild(inputADiv())
@@ -85,62 +85,63 @@ const divWrapper = function(){
     return newDiv
 }
 
-const inputTitle = function(){
-    const newDiv = document.createElement('div')
-    newDiv.setAttribute('class', 'input-field col s8 fiver')
-    let input = textInput()
-    input.setAttribute('id', 'title')
-    newDiv.appendChild(input)
-    newDiv.appendChild(titleLabel())
-    return newDiv
-}
+// const inputTitle = function(){
+//     const newDiv = document.createElement('div')
+//     newDiv.setAttribute('class', 'input-field col s8 fiver')
+//     let input = textInput()
+//     input.setAttribute('id', 'title')
+//     newDiv.appendChild(input)
+//     newDiv.appendChild(titleLabel())
+//     return newDiv
+// }
 
-const titleWrapper = function(){
-    const newDiv = document.createElement('div')
-    newDiv.setAttribute('id', 'deck-title')
-    newDiv.setAttribute('class', 'row')
-    newDiv.appendChild(inputTitle())
-    return newDiv
-}
+// const titleWrapper = function(){
+//     const newDiv = document.createElement('div')
+//     newDiv.setAttribute('id', 'deck-title')
+//     newDiv.setAttribute('class', 'row')
+//     newDiv.appendChild(inputTitle())
+//     return newDiv
+// }
 
-const buttonTag = function(){
-    const button = document.createElement('button')
-    button.setAttribute('type', 'submit')
-    button.setAttribute('class', 'btn-small waves-effect light-blue darken-4')
-    button.innerText = 'Submit'
-    return button
-}
+// const buttonTag = function(){
+//     const button = document.createElement('button')
+//     button.setAttribute('type', 'submit')
+//     button.setAttribute('class', 'btn-small waves-effect light-blue darken-4')
+//     button.innerText = 'Submit'
+//     return button
+// }
 
-const buttonDiv = function(){
-    const newDiv = document.createElement('div')
-    newDiv.appendChild(buttonTag())
-    return newDiv
-}
+// const buttonDiv = function(){
+//     const newDiv = document.createElement('div')
+//     newDiv.appendChild(buttonTag())
+//     return newDiv
+// }
 
-function lotsOfInputs(div){
-    for(let i = 0; i < 20; i++){
-        div.appendChild(divWrapper())
+function lotsOfInputs(){
+    const inputBlock = document.getElementById('input-block')
+    for(let i = 0; i < 9; i++){
+        inputBlock.appendChild(inputWrapper())
     }
 }
 
-const formTag = function(){
-    const form = document.createElement('form')
-    form.setAttribute('id', 'deck-creator')
-    form.appendChild(titleWrapper())
-    lotsOfInputs(form)
-    form.appendChild(buttonDiv())
-    return form
-}
+// const formTag = function(){
+//     const form = document.createElement('form')
+//     form.setAttribute('id', 'deck-creator')
+//     form.appendChild(titleWrapper())
+//     lotsOfInputs(form)
+//     form.appendChild(buttonDiv())
+//     return form
+// }
 
-const formWrapper = function(){
-    const newDiv = document.createElement('div')
-    newDiv.setAttribute('class', 'col s7 push-s1 fiver baby-blue')
-    newDiv.appendChild(formTag())
-    return newDiv
-}
+// const formWrapper = function(){
+//     const newDiv = document.createElement('div')
+//     newDiv.setAttribute('class', 'col s7 push-s1 fiver baby-blue')
+//     newDiv.appendChild(formTag())
+//     return newDiv
+// }
 
-function setCreatorPage(){
-    const mainDiv = document.getElementById('top-row')
-    mainDiv.appendChild(windowKermit())
-    mainDiv.appendChild(formWrapper())
-}
+// function setCreatorPage(){
+//     const mainDiv = document.getElementById('top-row')
+//     mainDiv.appendChild(windowKermit())
+//     mainDiv.appendChild(formWrapper())
+// }
