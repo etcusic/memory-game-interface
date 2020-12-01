@@ -1,5 +1,5 @@
 const practiceArray = [
-    "Don't forget to set a 35 character limit",
+    "Set a 35 char limit - big raccoons",
     "15 characters for title",
     "card3",
     "card4",
@@ -21,6 +21,28 @@ const practiceArray = [
     "card20"
 ]
 
+// new idea => set up the game so that there are 4 options for each question
+
+function startGame(){
+    const startButton = document.getElementById('start-button')
+    startButton.addEventListener('click', function(e){
+        let quizTerm = document.getElementById('quiz-term')
+        quizTerm.style.fontSize = "55px"
+        quizTerm.innerText = practiceArray[0]
+    })
+}
+
+function checkAnswer(card, quizTerm, i){
+    if (card.innerText === quizTerm.innerText){
+        card.style.background = "#32CD32"
+        quizTerm.innerText = practiceArray[i + 1]
+    } else {
+        card.style.background = 'red'
+        // pause 1-2 seconds on wrong answer
+        // card.style.background = '#FF9'
+    }
+}
+
 const cardWrapper = function(card){
     const newDiv = document.createElement('div')
     newDiv.setAttribute('class', 'col s3')
@@ -32,6 +54,9 @@ const quizCard = function(content){
     const newDiv = document.createElement('div')
     newDiv.setAttribute('class', 'card quiz-cards')
     newDiv.innerText = content
+    newDiv.addEventListener('click', function(e){
+        checkAnswer(newDiv, document.getElementById('quiz-term'), practiceArray.indexOf(document.getElementById('quiz-term').innerText))
+    })
     return newDiv
 }
 
@@ -40,7 +65,8 @@ function displayCards(array){
     array.forEach(function(e){
         divWrapper.appendChild(cardWrapper(quizCard(e)))
     })
-    //comment this out to implement with rest of site
+    //comment these out to implement with rest of site
+    document.getElementById('game-header').style.display = 'block'
     divWrapper.style.display = 'block'
 }
 

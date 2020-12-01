@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    displayCards(practiceArray)
+    // displayCards(practiceArray)
+    // startGame()
+    // comment out top two to reset web app
     lotsOfInputs()
     buttonOne()
     buttonTwo()
@@ -62,6 +64,7 @@ function buttonFour(){
             four.style.display = "block"
             mainHeader.style.display = "none"
             gameHeader.style.display = "block"
+            // startGame()
         })
     })
 }

@@ -7,18 +7,17 @@
 
 #header { margin-bottom: 2%;}
 #main { height: 580px   }
-/* #footer {
-    float: bottom;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 5%;
-} */
+#game-header {  
+    font-size: 80px;
+    font-weight: bold;
+ }
 
 #top-row {  margin-top: 2% }
 .quiz { height: 100px   }
 #welcome-card { margin-top: 3%  }
-
+.topper {   margin-top: 1%  }
 .fiver {    margin-top: 3%  }
+/* .shlefty {  margin-left: 2% } */
 .baby-blue {   background-color: #89CFF0    }
 
 .responsive-image {
@@ -51,6 +50,6 @@
     font-size: 35px;
     text-align: center; 
     margin-bottom: 1%;
-    background-color: #89CFF0;
+    background-color: #FF9;
 }
 
