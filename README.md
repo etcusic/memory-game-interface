@@ -32,6 +32,7 @@ Quiz Page:
 [ ] Countdown timer function
 [ ] Wrong answer function
 [ ] Score board
+[ ] Game Over function
 
 Game Over Display:
 [ ] Set up HTML

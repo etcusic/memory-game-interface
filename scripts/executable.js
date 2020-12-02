@@ -64,7 +64,22 @@ function buttonFour(){
             four.style.display = "block"
             mainHeader.style.display = "none"
             gameHeader.style.display = "block"
-            // startGame()
+            startGame()
+        })
+    })
+}
+
+function leaveGame(){
+    document.getElementsByClassName('exit-game').forEach(item => {
+        item.addEventListener('click', event => {
+            one.style.display = "block"
+            two.style.display = "none"
+            three.style.display = "none"
+            four.style.display = "none"
+            mainHeader.style.display = "block"
+            gameHeader.style.display = "none"
+            // still need to delete cards
+            endGame()
         })
     })
 }

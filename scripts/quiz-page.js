@@ -21,7 +21,7 @@ const practiceArray = [
     "card20"
 ]
 
-// new idea => set up the game so that there are 4 options for each question
+// new idea => set up the game so that there are 8 options for each question - question is in the middle with 8 surrounding it
 
 function startGame(){
     const startButton = document.getElementById('start-button')
@@ -29,6 +29,7 @@ function startGame(){
         let quizTerm = document.getElementById('quiz-term')
         quizTerm.style.fontSize = "55px"
         quizTerm.innerText = practiceArray[0]
+        displayCards(practiceArray)
     })
 }
 
@@ -70,3 +71,6 @@ function displayCards(array){
     divWrapper.style.display = 'block'
 }
 
+function endGame(){
+    
+}
