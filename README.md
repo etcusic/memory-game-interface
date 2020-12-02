@@ -55,6 +55,6 @@ Stretch additions:
 [ ] Quiz with term in center - 8 surrounding options
 [ ] Tic Tac Toe
 [ ] Connect four
-[ ]
+[ ] Personality test - Random questions, zero computing, tells user that they are a hazard to society and have been put on a watch list for the cummunity's safety.
 [ ]
 [ ]

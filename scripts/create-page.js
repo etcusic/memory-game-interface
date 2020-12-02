@@ -52,3 +52,16 @@ function lotsOfInputs(){
     }
 }
 
+function formListener(){
+    const inputBlock = document.getElementById('input-block')
+    document.getElementById('new-card-button').addEventListener('click', function(e){
+        e.preventDefault()
+        inputBlock.appendChild(inputWrapper())
+    })
+
+    document.getElementById('submit-new-deck-button').addEventListener('click', function(e){
+        e.preventDefault()
+        console.log('new deck submits now')
+        // submitNewDeck()
+    })
+}

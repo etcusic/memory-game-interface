@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // displayCards(practiceArray)
     // startGame()
     // comment out top two to reset web app
+    formListener()
     lotsOfInputs()
+    // revisit this for cleaning up
     buttonOne()
     buttonTwo()
     buttonThree()
