@@ -45,6 +45,8 @@ General:
 [ ] Organize code in executable to bare minimum
 [ ] Create a Function/Object for efficiently handling page display elements
 [ ] Organize CSS for consistency
+[ ] Set up a way to kill functions and not repropagate html => quiz play button, input fields & submit button (do i set up html segment constants??)
+[ ]
 
 Error Handling:
 [ ]
@@ -53,8 +55,8 @@ Error Handling:
 
 Stretch additions:
 [ ] Quiz with term in center - 8 surrounding options
+[ ] Quiz with image and term
 [ ] Tic Tac Toe
 [ ] Connect four
 [ ] Personality test - Random questions, zero computing, tells user that they are a hazard to society and have been put on a watch list for the cummunity's safety.
-[ ]
 [ ]
