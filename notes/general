@@ -1,10 +1,10 @@
 MVP stages:
 1)
 - Backend:
-    [ ] Deck and Card model -> Deck has_many :cards
-    [ ] Deck title:string
-    [ ] Card deck:belongs_to, side_a:string, side_b:string
-    [ ] Routes: DeckController -> index, show | CardController -> index (@cards = deck.cards), show (@card = card) => /decks/:id/cards/index - nested inside deck resource
+    [x] Deck and Card model -> Deck has_many :cards
+    [x] Deck title:string
+    [x] Card deck:belongs_to, side_a:string, side_b:string
+    [x] Routes: DeckController -> index, show | CardController -> index (@cards = deck.cards), show (@card = card) => /decks/:id/cards/index - nested inside deck resource
 - Frontend:
     [ ] deck selector
     [ ] level selector
