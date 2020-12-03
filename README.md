@@ -54,6 +54,10 @@ Error Handling:
 [ ]
 
 Stretch additions:
+[ ]
+[ ]
+[ ]
+[ ]
 [ ] Quiz with term in center - 8 surrounding options
 [ ] Quiz with image and term
 [ ] Tic Tac Toe
