@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("working")
-    loadDeck()
+    loadDecks()
+    $(document).ready(function(){
+        $('select').formSelect();
+      });
+    // loadMuppets()
 
 })
 
@@ -20,8 +23,19 @@ function displayCards(array){
     });
 }
 
-function loadDeck() {
-    fetch("http://localhost:3000/decks/1/cards")
+function decksToDropdown(array){
+
+}
+
+function loadDecks() {
+    fetch("http://localhost:3000/decks")
+    .then(resp => resp.json())
+    .then(data => decksToDropdown(data))
+}
+
+function loadSpecificDeck(id) {
+    fetch(`http://localhost:3000/decks/${id}/cards`)
     .then(resp => resp.json())
     .then(data => displayCards(data))
 }
+

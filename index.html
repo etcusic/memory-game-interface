@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>Home Template</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
     <link rel="stylesheet" href="stylesheets/practice.css" />
@@ -15,6 +19,19 @@
 </header>
 
 <main id='main' class="amber lighten-4">
+    <form>
+        <div class="input-field col s12">
+            <select>
+                <option value="" disabled selected>Best Beatle</option>
+                <option value="Lennon">John</option>
+                <option value="McCartney">Paul</option>
+                <option value="Harrison">George</option>
+                <option value="Starr">Ringo</option>
+             </select>
+             <label>The Fab Four</label>
+          </div>
+    </form>
+
     <div id='game-container' class='row'>
         
     </div>
@@ -23,7 +40,7 @@
 </body>
 
 <script>
-
+        
 </script>
 
 <style>
