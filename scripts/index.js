@@ -57,21 +57,14 @@ function decksToDropdown(array){
     })
 }
 
-function loadDecks() {
-    fetch("http://localhost:3000/decks")
-    .then(resp => resp.json())
-    .then(data => decksToDropdown(data))
-}
-
-function loadSpecificDeck(id) {
-    fetch(`http://localhost:3000/decks/${id}/cards`)
-    .then(resp => resp.json())
-    .then(data => displayCards(data))
-}
-
 // add 9 cards to page
-function applyOptions(){
-    document.getElementById('apply-options').addEventListener('click', function(e){
 
-    })
+document.getElementById('apply-options').addEventListener('click', function(e){
+    displayNineCards()
+})
+
+function displayNineCards(arrayOfCards){
+    for (let i = 1; i < 10; i++){
+        document.getElementById(`card-${i}`).innerHTML += arrayOfCards[i].display()
+    }
 }

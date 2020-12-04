@@ -6,19 +6,20 @@ MVP stages:
     [x] Card deck:belongs_to, side_a:string, side_b:string
     [x] Routes: DeckController -> index, show | CardController -> index (@cards = deck.cards), show (@card = card) => /decks/:id/cards/index - nested inside deck resource
 - Frontend:
-    [ ] create models - I think?
-    [ ] deck selector
-    [ ] level selector
+    [ ] deck model
+    [ ] card model
+    [ ] API model
+    [x] deck selector
     [ ] apply button
-    [ ] game container
+    [x] game container
     [ ] score
     [ ] timer
     [ ] deck title
     [ ] play button
-    [ ] card display
+    [x] card display
     [ ] click card - red/green
     [ ] score - +1 green, -1 red
-    [ ] wipe cards and replace
+    [ ] game model - incorporate all logic for a game, then display score
     [ ] organize css
 
 2)
@@ -27,12 +28,13 @@ MVP stages:
     [ ] GameLog
     [ ] Routes: User -> index, show | GameLog -> index, update
 - Frontend:
-    [ ] landing page with button
-    [ ] header with logo
+    [x] landing page with button
+    [x] header with logo
     [ ] muppet selector
+    [ ] level selector
     [ ] error => if no muppet is selected, can't move forward
     [ ] muppet user image
-    [ ] level: 0-3
+    [ ] develop levels: 0-3
     [ ] practice => show one card, click to reveal answer (maybe add a check box to remove from the rotation)
     [ ] score: based on speed/level
     [ ] add keypresses (numbers) as well as clicks

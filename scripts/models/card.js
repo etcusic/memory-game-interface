@@ -1,7 +1,11 @@
 class Card {
     constructor(hash){
+        this.id = hash.id
         this.sideA = hash.side_a
         this.sideB = hash.side_b
+        this.deckId = hash.deck_id
+        console.log(hash)
+        console.log(hash.id)
         console.log(this)
     }
 
