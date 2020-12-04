@@ -9,7 +9,7 @@ class API {
     static loadSpecificDeck(id) {
         fetch(`http://localhost:3000/decks/${id}/cards`)
         .then(resp => resp.json())
-        .then(data => displayCards(data))
+        .then(data => loadCards(data))
     }
 
 }

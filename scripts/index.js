@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    loadDecks()
+    API.loadDecks()
     initializePage()    
     // loadMuppets()
 
     document.getElementById('bullshit-initializer').addEventListener('click', function(e){
         initializeMaterialize()
     })
+
+    getCardsButton()
 
 })
 
@@ -57,14 +59,30 @@ function decksToDropdown(array){
     })
 }
 
-// add 9 cards to page
+function loadCards(array){
+    let empty = []
+    array.forEach(function(e){
+        let x = new Card(e)
+        empty.push(x)
+    })
+    // let empty = array.map(function(e){
+    //     e = new Card(e)
+    // })
+    // console.log(empty[0])
+    displayNineCards(empty)
+}
 
-document.getElementById('apply-options').addEventListener('click', function(e){
-    displayNineCards()
-})
+// add 9 cards to page
+function getCardsButton(){
+    document.getElementById('apply-options').addEventListener('click', function(e){
+        API.loadSpecificDeck(1)
+    })
+}
 
 function displayNineCards(arrayOfCards){
+    console.log(arrayOfCards)
     for (let i = 1; i < 10; i++){
-        document.getElementById(`card-${i}`).innerHTML += arrayOfCards[i].display()
+        let x = arrayOfCards[i]
+        document.getElementById(`card-${i}`).appendChild(x.htmlNode())
     }
 }
