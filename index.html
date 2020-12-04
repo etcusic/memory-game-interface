@@ -14,23 +14,41 @@
 <body class='deep-orange lighten-4'>
 
 <header>
-
+    <img class='responsive-image left' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ12m_nUMbxdm3ajOnj7RhpaQ2WUAMFCLXNmA&usqp=CAU">
+        
+    <div class="header section light-blue darken-4 white-text center-align">
+        QUIZZLATOR
+        <button id='bullshit-initializer' class='btn-large'>INITIALIZER</button>
+    </div>
 </header>
 
-<main id='main' class="amber lighten-4">
-    <button id='bullshit-initializer' class='btn-large'>Press Button to Begin</button>
-    
-    <div class='row'>
-        <div class="col s2">
-            <select id='decks-dropdown' class='col s3'>
-                <option disabled selected>select option</option>
-            </select>
-        </div>
-    </div>
+<main id='main' class="light-blue lighten-2">
+    <div class="row">
 
-    <div id='game-container'>
+        <div class="col s2">
+
+            <div class="row">
+                <div class="col s12">
+                    <select id='decks-dropdown' class='col s3'>
+                        <option disabled selected>select option</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+            
+        <div id='game-container'  class="col s10 amber lighten-4">
+            <div class="row">
+                <div class="col s10 push-s1">
+                    This is the game container
+                </div>
+            </div>
+        </div>
         
     </div>
+    
+    </div>
+
 </main>
 
 </body>
@@ -40,6 +58,21 @@
 </script>
 
 <style>
+/* #game-container {
+    height: 800px;
+    width: 600px;
+    border-radius: black;
+} */
+
+
+.header {
+    margin-top: 0px;
+    height: 195px;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+
 .quiz-card {
     height: 150px;
     margin: 1%;
@@ -47,6 +80,10 @@
 }
 </style>
 
+<script src="scripts/services/API.js"></script>
+
+<script src="scripts/models/deck.js"></script>
+<script src="scripts/models/card.js"></script>
 <script src="scripts/index.js"></script>
 
 </html>
