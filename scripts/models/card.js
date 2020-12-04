@@ -4,7 +4,6 @@ class Card {
         this.side_a = hash.side_a
         this.side_b = hash.side_b
         this.deck_id = hash.deck_id
-        this.node = this.createlNode()
     }
 
     // add a param for if someone wants to decide on side A or side B

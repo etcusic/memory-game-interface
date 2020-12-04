@@ -50,12 +50,32 @@
         <div id='game-container'  class="col s10 amber lighten-4">
             <div class="row">
                 <div class="col s10 push-s1">
-                    
-                    <div id='score-term-timer' class="row green lighten-1">
-                        <div class="col s12">
+
+                    <!-- <div id='score-term-timer' class="row green lighten-1">
+                        <div class="col s2">
                             <div class="right">TIMER</div>
+                        </div>
+                        <div class="col s8">
                             <div class="left">SCORE</div>
+                        </div>
+                        <div class="col s2">
                             <div class="center-align">TERM</div>
+                        </div>
+                    </div> -->
+                    
+                    <div id='score-term-timer' class="score-board row">
+                        <div class="col s12">
+                            <div class="right">
+                                <div id='timer'>TIMER:</div> 
+                                <div class="number center-align">0</div>
+                            </div>
+                            <div class="left">
+                                <div id='score'>SCORE:</div> 
+                                <div class="number center-align">0</div> 
+                            </div>
+                            <div id='term' class="center-align">
+                                <div>TERM</div>    
+                            </div>
                         </div>
                     </div>
 
@@ -141,6 +161,21 @@
 
 #score-term-timer {
     height: 100px;
+}
+
+.number {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.score-board {
+    margin-top: 5%;
+    font-size: 20px;
+}
+
+#term {
+    margin-top: 3%;
+    font-size: 55px;
 }
 
 .header {

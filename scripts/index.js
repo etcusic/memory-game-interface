@@ -60,16 +60,7 @@ function decksToDropdown(array){
 }
 
 function loadCards(array){
-    // why the fuck won't map work???
-    // array.map(x => x = new Card(x))
-    // console.log(array)
-
-    let empty = []
-    array.forEach(function(e){
-        let x = new Card(e)
-        empty.push(x)
-    })
-    displayNineCards(empty)
+    displayNineCards(array.map(x => new Card(x)))
 }
 
 // add 9 cards to page
@@ -82,7 +73,7 @@ function getCardsButton(){
 // need to add event listener onto each card
 function displayNineCards(arrayOfCards){
     for (let i = 1; i < 10; i++){
-        document.getElementById(`card-${i}`).appendChild(arrayOfCards[i].node)
+        document.getElementById(`card-${i}`).appendChild(arrayOfCards[i].createNode())
     }
 }
 
