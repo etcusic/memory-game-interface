@@ -22,6 +22,7 @@ function initializePage(){
     })
 }
 
+// this is for development - use initializePage() for actual program
 function initializeMaterialize(){
     $(document).ready(function(){
         $('select').formSelect();
@@ -37,7 +38,6 @@ function appendCard(card){
 
 function displayCards(array){
     const gameContainer = document.getElementById('game-container')
-    console.log(gameContainer)
     array.forEach(element => {
         gameContainer.innerHTML += appendCard(element)
     });
@@ -69,3 +69,9 @@ function loadSpecificDeck(id) {
     .then(data => displayCards(data))
 }
 
+// add 9 cards to page
+function applyOptions(){
+    document.getElementById('apply-options').addEventListener('click', function(e){
+
+    })
+}
