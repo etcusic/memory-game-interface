@@ -1,17 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     loadDecks()
-
-    let initializationButton = document.getElementById('bullshit-initializer')
-    initializationButton.addEventListener('click', function(e){
-        $(document).ready(function(){
-            $('select').formSelect();
-        });
-    })
-    
+    initializePage()    
     // loadMuppets()
 
 })
+
+function initializePage(){
+    document.querySelectorAll('.base-page-button').forEach(item => {
+        item.addEventListener('click', event => {
+            let landing_page = document.getElementById('landing-page-wrapper')
+            let main_page = document.getElementById('main')
+            landing_page.style.display = 'none'
+            main_page.style.display = 'block'
+            initializeMaterialize()
+        })
+    })
+}
+
+function initializeMaterialize(){
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+}
 
 function appendCard(card){
     return `
