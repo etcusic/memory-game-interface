@@ -10,7 +10,7 @@ class API {
         // need to send array of cards to GAME
         fetch(`http://localhost:3000/decks/${id}/cards`)
         .then(resp => resp.json())
-        .then(data => loadCards(data))
+        .then(data => Game.loadGame(data))
     }
 
 }

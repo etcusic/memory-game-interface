@@ -16,7 +16,7 @@ function initializePage(){
             let main_page = document.getElementById('main')
             landing_page.style.display = 'none'
             main_page.style.display = 'block'
-            initializeMaterialize()
+            // initializeMaterialize()
         })
     })
 }
@@ -41,9 +41,10 @@ function decksToDropdown(array){
     })
 }
 
-function loadCards(array){
-    displayNineCards(array.map(x => new Card(x)))
-}
+// function loadCards(array){
+    // displayNineCards(array.map(x => new Card(x)))
+    // Game.play(array.map(x => new Card(x)))
+// }
 
 // add 9 cards to page
 // this function needs to take an ID parameter
@@ -52,6 +53,11 @@ function displayNineCards(arrayOfCards){
         document.getElementById(`card-${i}`).appendChild(arrayOfCards[i].createNode())
     }
 }
+
+
+
+
+
 
 // function getCardsButton(){
 //     document.getElementById('apply-options').addEventListener('click', function(e){

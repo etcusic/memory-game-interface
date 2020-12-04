@@ -45,7 +45,7 @@
 
             <div class="row">
                 <div class="col s12">
-                    <!-- <button id='apply-options' class='left btn-small'>APPLY OPTIONS</button> -->
+                    <button id='apply-options' class='left btn-small'>PLAY BALL!</button>
                 </div>
             </div>
 
@@ -71,14 +71,14 @@
                         <div class="col s12">
                             <div class="right">
                                 <div id='timer'>TIMER:</div> 
-                                <div class="number center-align">0</div>
+                                <div id='timer-value' class="number center-align">0</div>
                             </div>
                             <div class="left">
                                 <div id='score'>SCORE:</div> 
-                                <div class="number center-align">0</div> 
+                                <div id='score-value' class="number center-align">0</div> 
                             </div>
                             <div id='term' class="center-align">
-                                <div>TERM</div>    
+                                <div id='term-value'>TERM</div>    
                             </div>
                         </div>
                     </div>
@@ -153,9 +153,9 @@
 </script>
 
 <style>
-#main { display: none;  }
+#main { display: block;  }
 #landing-page-wrapper {
-    display: block;
+    display: none;
     margin-top: 3%;
 }
 
