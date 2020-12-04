@@ -11,7 +11,7 @@ class Card {
     createNode(){
         const card = document.createElement('div')
         card.setAttribute('data-card', `${this.id}`)
-        card.setAttribute('class', "quiz-card card center-align")
+        card.setAttribute('class', "quiz-card card center-align z-depth-4")
         card.innerText = this.side_b
         return card
     }
