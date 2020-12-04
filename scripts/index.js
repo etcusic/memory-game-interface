@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     initializePage()    
     // loadMuppets()
 
+    document.getElementById('bullshit-initializer').addEventListener('click', function(e){
+        initializeMaterialize()
+    })
+
 })
 
 function initializePage(){
