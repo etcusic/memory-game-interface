@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     loadDecks()
-    $(document).ready(function(){
-        $('select').formSelect();
-      });
+
+    let initializationButton = document.getElementById('bullshit-initializer')
+    initializationButton.addEventListener('click', function(e){
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+    })
+    
     // loadMuppets()
 
 })
@@ -23,8 +28,18 @@ function displayCards(array){
     });
 }
 
-function decksToDropdown(array){
+function deckOption(deckInfo){
+    const option = document.createElement('option')
+    option.setAttribute('value', deckInfo.title)
+    option.innerHTML = deckInfo.title
+    return option
+}
 
+function decksToDropdown(array){
+    const decksDropdown = document.getElementById('decks-dropdown')
+    array.forEach(function(deck){ 
+        decksDropdown.innerHTML += `<option value=${deck.title}>${deck.title}</option>`
+    })
 }
 
 function loadDecks() {
