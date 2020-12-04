@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
+// this is activated by landing page button - ultimately goes in doc.addEventListener
 function initializePage(){
     document.querySelectorAll('.base-page-button').forEach(item => {
         item.addEventListener('click', event => {
@@ -31,20 +32,6 @@ function initializeMaterialize(){
     });
 }
 
-function appendCard(card){
-    return `
-        <div class="quiz-card card col s2 light-blue darken-4 white-text center-align">
-            ${card.side_b}
-        </div>`
-}
-
-function displayCards(array){
-    const gameContainer = document.getElementById('game-container')
-    array.forEach(element => {
-        gameContainer.innerHTML += appendCard(element)
-    });
-}
-
 function deckOption(deckInfo){
     const option = document.createElement('option')
     option.setAttribute('value', deckInfo.title)
@@ -55,7 +42,9 @@ function deckOption(deckInfo){
 function decksToDropdown(array){
     const decksDropdown = document.getElementById('decks-dropdown')
     array.forEach(function(deck){ 
-        decksDropdown.innerHTML += `<option value=${deck.title}>${deck.title}</option>`
+         node = deckOption(deck)
+         node.addEventListener(e => API.loadSpecificDeck(deck.id))
+        decksDropdown.appendChild(node)
     })
 }
 
@@ -64,6 +53,7 @@ function loadCards(array){
 }
 
 // add 9 cards to page
+// this function needs to take an ID parameter
 function getCardsButton(){
     document.getElementById('apply-options').addEventListener('click', function(e){
         API.loadSpecificDeck(1)
