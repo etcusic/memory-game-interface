@@ -27,31 +27,32 @@ function deckOption(deckInfo){
     option.setAttribute('value', deckInfo.id)
     option.setAttribute('class', "collection-item purple lighten-2 white-text")
     option.innerHTML = deckInfo.title
+    option.addEventListener('click', function(e) { 
+        API.loadSpecificDeck(option.value)
+    })
     return option
 }
 
 function decksToDropdown(array){
     const listOfDecks = document.getElementById('fucked-up-dropdown')
-    console.log(listOfDecks)
     array.forEach(function(deck){ 
         node = deckOption(deck)
-        console.log(node)
         listOfDecks.appendChild(node)
-        node.addEventListener('click', function(e) { 
-            console.log(node.value)
-            API.loadSpecificDeck(node.value)
-        })
     })
 }
 
 function loadCards(array){
-    console.log(array)
     displayNineCards(array.map(x => new Card(x)))
-    console.log(array)
 }
 
 // add 9 cards to page
 // this function needs to take an ID parameter
+function displayNineCards(arrayOfCards){
+    for (let i = 1; i < 10; i++){
+        document.getElementById(`card-${i}`).appendChild(arrayOfCards[i].createNode())
+    }
+}
+
 // function getCardsButton(){
 //     document.getElementById('apply-options').addEventListener('click', function(e){
 //         API.loadSpecificDeck(1)
@@ -59,11 +60,6 @@ function loadCards(array){
 // }
 
 // need to add event listener onto each card
-function displayNineCards(arrayOfCards){
-    for (let i = 1; i < 10; i++){
-        document.getElementById(`card-${i}`).appendChild(arrayOfCards[i].createNode())
-    }
-}
 
 
 
