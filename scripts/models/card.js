@@ -4,12 +4,12 @@ class Card {
         this.side_a = hash.side_a
         this.side_b = hash.side_b
         this.deck_id = hash.deck_id
-        // console.log(this)
+        this.node = this.createlNode()
     }
 
     // add a param for if someone wants to decide on side A or side B
-    // should probably add a getter and setter for this function
-    htmlNode(){
+    // also add an event listener for each card
+    createNode(){
         const card = document.createElement('div')
         card.setAttribute('data-card', `${this.id}`)
         card.setAttribute('class', "quiz-card card center-align")
