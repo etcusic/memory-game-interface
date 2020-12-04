@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+    
     <link rel="stylesheet" href="stylesheets/practice.css" />
 </head>
 
@@ -32,16 +33,20 @@
         <div id='left-container' class="col s2">
 
             <div class="row">
-                <div class="col s12">
-                    <select id='decks-dropdown' class='col s3'>
+                <div class="col s12 input-field">
+                    <select id='decks-dropdown' class='col s3' value="-1">
                         <option disabled selected>select option</option>
                     </select>
                 </div>
             </div>
+            <div>
+                <ul id='fucked-up-dropdown' class='collection z-depth-2'>
+                </ul>
+            </div>
 
             <div class="row">
                 <div class="col s12">
-                    <button id='apply-options' class='left btn-small'>APPLY OPTIONS</button>
+                    <!-- <button id='apply-options' class='left btn-small'>APPLY OPTIONS</button> -->
                 </div>
             </div>
 
@@ -191,7 +196,6 @@
 
 .quiz-card {
     height: 150px;
-    /* width: 300px; */
     margin: 2%;
     font-size: 45px;
 }
@@ -201,6 +205,7 @@
 
 <script src="scripts/models/deck.js"></script>
 <script src="scripts/models/card.js"></script>
+<script src="scripts/models/game.js"></script>
 <script src="scripts/index.js"></script>
 
 </html>
