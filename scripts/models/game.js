@@ -6,9 +6,26 @@ class Game {
         this.deck = deck
     }
 
-    play(){
-        console.log(this.deck)
-        console.log("Play Ball!")
+    sleep() {
+        return new Promise(resolve => setTimeout(resolve, 1000));
+    }
+
+    // async webPage() {
+    //     while (pause.innerHTML === ' pause ') {
+    //         count += 1
+    //         console.log(count)
+    //         counter.innerHTML = count
+    //     }
+    // }
+
+    async play(){
+        console.log("Initialize cards here!")
+        while (this.timer > 0){
+            this.timer -= 1
+            document.getElementById('timer-value').innerHTML = this.timer
+            await this.sleep()
+        }
+        console.log('yay!')
     }
 
     static loadGame(deckArray){
