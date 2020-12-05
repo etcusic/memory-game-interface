@@ -9,6 +9,14 @@ class Game {
 
     sleep() {
         return new Promise(resolve => setTimeout(resolve, 1000));
+    } 
+
+    static shuffle(array){
+        return array.sort(() => Math.random() - 0.5)
+    }
+
+    displayTerm(){
+        // match card.id with this.round + 1
     }
 
     displayRound(deck){
@@ -39,18 +47,20 @@ class Game {
             cardNode.style.background = 'red'
             this.score -= 1
         }
-        console.log(this.score)
         document.getElementById('score-value').innerHTML = this.score
         // this.round += 1
-        // this.nextRound()
+        // this.displayRound()
     }
 
     static loadGame(deckArray){
         console.log('game loaded')
+        console.log(Game.shuffle([1,2,3,4,5,6,7,8,9]))
+        console.log(Game.shuffle([1,2,3,4,5,6,7,8,9]))
+        console.log(Game.shuffle([1,2,3,4,5,6,7,8,9]))
         const deck = deckArray.map(x => new Card(x))
         let game = new Game(60, deck)
-        console.log(game.round)
-        //should I make these global constants ???
+        //should I make these global constants ??? - or maybe a DOM class with these elements as class methods?
+        // => DOM.adjustTimer(x) => document.getElementById('timer-value').innerHTML = x    
         document.getElementById('timer-value').innerHTML = game.timer
         document.getElementById('term-value').innerHTML = "-----"
         document.getElementById('score-value').innerHTML = game.score
