@@ -1,4 +1,5 @@
 class Game {
+    // MAYBE ADDING NODE ATTR TO CARD WILL SOLVE THIS ISSUE!!!
     // Should I make instances of Game?? - 
     // create GameLog class with instances -> then I can load a game log instance into Game class
     constructor(timer, deck){
@@ -66,12 +67,9 @@ class Game {
 
         // better game over display
 
+        // MAYBE ADDING NODE ATTR TO CARD INSTANCES WILL SOLVE THIS PROBLEM - THE ISSUE IS WITH CHECKING ANSWER ON SECOND GO ROUND
         // HOW DO I DELETE GAME ???
-        // this does not quite work
-        delete game.deck
-        delete game.timer
-        delete game.score
-        delete game.round
+        // class GameLog => pass that instance into Game and then delete this.gameLog
     }
 
     static loadGame(deckArray){

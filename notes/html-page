@@ -1,0 +1,39 @@
+HTML page:
+
+LANDING PAGE: id="landing-page"
+- Materialize container
+    - Image top
+    - Greeting
+    - Options
+
+BODY WRAPPER: id="body-wrapper"
+- display: 'none' => hides header, panel, and main area
+
+HEADER: id="header"
+- logo image: float right
+- title
+
+LEFT PANEL: id="left-panel"
+- profile image: top
+- selectors below
+
+MAIN AREA: id="main"
+- Opening message: id="opening-message"
+    - "choose the stuff and whatnot"
+    - action button to apply options
+- Speed game: id="speed-game"
+    - display game with scoreboard
+    - action button: start game (or press enter?)
+- Practice: id="practice"
+    - display one card at a time => left and right button - show card number of total - radio button to deactivate a card
+    - action buttons: 1) revert back to opening message; 2) play speed game with that deck
+- Game over message: id="game-over"
+    - display score
+    - action button for next step
+- High score display: id="high-scores"
+    - ol => set up a scope method in Rails
+- Create/Edit page
+
+class Action => explicitly tell DOM which elements are block and which are none 
+    - all class level methods (static)
+    - include an initialization method that sets event listeners on all actionable items
