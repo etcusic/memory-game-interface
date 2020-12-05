@@ -1,9 +1,10 @@
 class Game {
     // Should I make instances of Game??
-    constructor(timer, score, deck){
+    constructor(timer, deck){
         this.timer = timer
-        this.score = score
         this.deck = deck
+        this.score = 0
+        this.round = 0
     }
 
     sleep() {
@@ -28,25 +29,33 @@ class Game {
         }
     }
 
-    static loadGame(deckArray){
-        console.log('game loaded')
-        const deck = deckArray.map(x => new Card(x))
-        let game = new Game(60, 0, deck)
-        //should I make these constants ???
-        document.getElementById('timer-value').innerHTML = game.timer
-        document.getElementById('term-value').innerHTML = "-----"
-        document.getElementById('score-value').innerHTML = game.score
-        document.getElementById('apply-options').addEventListener('click', () => game.play())
-        document.querySelectorAll(".quizzers").forEach(cardNode => cardNode.addEventListener('click', () => Game.checkAnswer(cardNode)))
-    }
-
-    static checkAnswer(answer){
+    checkAnswer(answer){
         const termNode = document.getElementById('term-value')
         const cardNode = answer.children[0]
         if (termNode.innerText === cardNode.attributes[2].value){
             cardNode.style.background = 'green'
+            this.score += 1
         } else {
             cardNode.style.background = 'red'
+            this.score -= 1
         }
+        console.log(this.score)
+        document.getElementById('score-value').innerHTML = this.score
+        // this.round += 1
+        // this.nextRound()
     }
+
+    static loadGame(deckArray){
+        console.log('game loaded')
+        const deck = deckArray.map(x => new Card(x))
+        let game = new Game(60, deck)
+        console.log(game.round)
+        //should I make these global constants ???
+        document.getElementById('timer-value').innerHTML = game.timer
+        document.getElementById('term-value').innerHTML = "-----"
+        document.getElementById('score-value').innerHTML = game.score
+        document.getElementById('apply-options').addEventListener('click', () => game.play())
+        document.querySelectorAll(".quizzers").forEach(cardNode => cardNode.addEventListener('click', () => game.checkAnswer(cardNode)))
+    }
+
 }
