@@ -42,6 +42,7 @@ class Game {
         }
         document.getElementById('score-value').innerHTML = this.score
         this.round += 1
+        wipeCards()
         this.displayRound()
     }
 

@@ -39,6 +39,15 @@ function decksToDropdown(array){
 }
 
 // add 9 cards to page
+function wipeCards(){
+    document.querySelectorAll(".quizzers").forEach(function(cardNode){
+        console.log(cardNode)
+        let child = cardNode.children[0]
+        console.log(child)
+        cardNode.removeChild(child)
+    })
+}
+
 function displayNineCards(arrayOfCards){
     for (let i = 0; i < 9; i++){
         const node = arrayOfCards[i].createNode()
