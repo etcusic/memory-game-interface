@@ -50,7 +50,9 @@ function decksToDropdown(array){
 // this function needs to take an ID parameter
 function displayNineCards(arrayOfCards){
     for (let i = 1; i < 10; i++){
-        document.getElementById(`card-${i}`).appendChild(arrayOfCards[i].createNode())
+        const node = arrayOfCards[i].createNode()
+        document.getElementById(`card-${i}`).appendChild(node)
+        // node.addEventListener('click', Game.checkAnswer(arrayOfCards[i], node))
     }
 }
 

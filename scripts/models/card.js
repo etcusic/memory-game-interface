@@ -10,10 +10,18 @@ class Card {
     // add a param for if someone wants to decide on side A or side B
     // also add an event listener for each card
     createNode(){
-        const card = document.createElement('div')
-        card.setAttribute('data-card', `${this.id}`)
-        card.setAttribute('class', "quiz-card card center-align z-depth-4")
-        card.innerText = this.side_b
-        return card
+        const cardNode = document.createElement('div')
+        cardNode.setAttribute('data-card', `${this.id}`)
+        cardNode.setAttribute('class', "quiz-card card center-align z-depth-4")
+        cardNode.setAttribute('value', this.side_a)
+        cardNode.innerText = this.side_b
+        // cardNode.addEventListener('click', Game.checkAnswer(this.side_a))
+        return cardNode
+        // return `
+        //     <div data-card=${this.id} value=${this.side_a} class="quiz-card card center-align z-depth-4">
+        //     ${this.side_b}
+        //     </div>
+        // `
     }
+
 }
