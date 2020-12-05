@@ -1,5 +1,6 @@
 class Game {
-    // Should I make instances of Game??
+    // Should I make instances of Game?? - 
+    // create GameLog class with instances -> then I can load a game log instance into Game class
     constructor(timer, deck){
         this.timer = timer
         this.deck = Game.shuffle(deck)
@@ -65,7 +66,8 @@ class Game {
 
         // better game over display
 
-        // spread operator
+        // HOW DO I DELETE GAME ???
+        // this does not quite work
         delete game.deck
         delete game.timer
         delete game.score
@@ -74,9 +76,6 @@ class Game {
 
     static loadGame(deckArray){
         console.log('game loaded')
-        console.log(Game.shuffle([1,2,3,4,5,6,7,8,9]))
-        console.log(Game.shuffle([1,2,3,4,5,6,7,8,9]))
-        console.log(Game.shuffle([1,2,3,4,5,6,7,8,9]))
         const deck = deckArray.map(x => new Card(x))
         let game = new Game(60, deck)
         //should I make these global constants ??? - or maybe a DOM class with these elements as class methods?

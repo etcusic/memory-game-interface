@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     API.loadDecks()
-    initializePage()    
+    initializePage()   
+    GAME = {} 
 
 })
 
