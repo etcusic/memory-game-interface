@@ -13,6 +13,7 @@ function initializePage(){
             let main_page = document.getElementById('main')
             landing_page.style.display = 'none'
             main_page.style.display = 'block'
+            // new Game(60, deck)
             // initializeMaterialize()
         })
     })
@@ -26,6 +27,7 @@ function deckOption(deckInfo){
     option.innerHTML = deckInfo.title
     option.addEventListener('click', function(e) { 
         API.loadSpecificDeck(option.value)
+        document.getElementById('term-value').innerHTML = deckInfo.title
     })
     return option
 }
@@ -41,9 +43,7 @@ function decksToDropdown(array){
 // add 9 cards to page
 function wipeCards(){
     document.querySelectorAll(".quizzers").forEach(function(cardNode){
-        console.log(cardNode)
         let child = cardNode.children[0]
-        console.log(child)
         cardNode.removeChild(child)
     })
 }
