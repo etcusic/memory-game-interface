@@ -2,9 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     API.loadDecks()
     initializePage()    
-    // loadMuppets()
-
-    // getCardsButton()
 
 })
 
@@ -41,33 +38,16 @@ function decksToDropdown(array){
     })
 }
 
-// function loadCards(array){
-    // displayNineCards(array.map(x => new Card(x)))
-    // Game.play(array.map(x => new Card(x)))
-// }
-
 // add 9 cards to page
-// this function needs to take an ID parameter
 function displayNineCards(arrayOfCards){
     for (let i = 1; i < 10; i++){
         const node = arrayOfCards[i].createNode()
         document.getElementById(`card-${i}`).appendChild(node)
-        // node.addEventListener('click', Game.checkAnswer(arrayOfCards[i], node))
     }
 }
 
 
 
-
-
-
-// function getCardsButton(){
-//     document.getElementById('apply-options').addEventListener('click', function(e){
-//         API.loadSpecificDeck(1)
-//     })
-// }
-
-// need to add event listener onto each card
 
 
 
