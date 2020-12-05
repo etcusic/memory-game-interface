@@ -40,9 +40,10 @@ function decksToDropdown(array){
 
 // add 9 cards to page
 function displayNineCards(arrayOfCards){
-    for (let i = 1; i < 10; i++){
+    for (let i = 0; i < 9; i++){
         const node = arrayOfCards[i].createNode()
-        document.getElementById(`card-${i}`).appendChild(node)
+        // should change this - each card will have a node attr, and a corresponding data-set number
+        document.getElementById(`card-${i+1}`).appendChild(node)
     }
 }
 

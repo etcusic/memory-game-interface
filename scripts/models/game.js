@@ -2,7 +2,7 @@ class Game {
     // Should I make instances of Game??
     constructor(timer, deck){
         this.timer = timer
-        this.deck = deck
+        this.deck = Game.shuffle(deck)
         this.score = 0
         this.round = 0
     }
@@ -15,17 +15,19 @@ class Game {
         return array.sort(() => Math.random() - 0.5)
     }
 
-    displayTerm(){
-        // match card.id with this.round + 1
-        return document.getElementById('term-value').innerText = this.deck[this.round].side_a
+    currentCard() {
+        return this.deck[this.round]
     }
 
-    displayRound(deck){
-        console.log(this.displayTerm())
-        // need to add shuffling somewhere
-        let currentTerm = this.displayTerm()
-        displayNineCards([currentTerm, ...this.deck])
-        // return [...quizArray, currentTerm]
+    displayTerm() {
+        document.getElementById('term-value').innerText = this.currentCard()['side_a']
+    }
+
+    displayRound(){
+        let thirtyOne = Game.shuffle(this.deck.filter(card => card !== this.currentCard()))
+        let nine = Game.shuffle([this.currentCard(), ...thirtyOne.slice(0, 8)])
+        this.displayTerm()
+        displayNineCards(nine)
     }
 
     checkAnswer(answer){
@@ -45,7 +47,7 @@ class Game {
 
     async play(){
         this.displayRound()
-        while (this.timer > 0){
+        while (this.timer > 0 && this.score < this.deck.length){
             this.timer -= 1
             document.getElementById('timer-value').innerHTML = this.timer
             await this.sleep()
