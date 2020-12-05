@@ -17,24 +17,15 @@ class Game {
 
     displayTerm(){
         // match card.id with this.round + 1
+        return document.getElementById('term-value').innerText = this.deck[this.round].side_a
     }
 
     displayRound(deck){
+        console.log(this.displayTerm())
         // need to add shuffling somewhere
-        const htmlTerm = document.getElementById('term-value')
-        let currentTerm = deck[0]
-        htmlTerm.innerText = currentTerm.side_a
-        displayNineCards([currentTerm, ...deck])
+        let currentTerm = this.displayTerm()
+        displayNineCards([currentTerm, ...this.deck])
         // return [...quizArray, currentTerm]
-    }
-
-    async play(){
-        this.displayRound(this.deck)
-        while (this.timer > 0){
-            this.timer -= 1
-            document.getElementById('timer-value').innerHTML = this.timer
-            await this.sleep()
-        }
     }
 
     checkAnswer(answer){
@@ -48,8 +39,17 @@ class Game {
             this.score -= 1
         }
         document.getElementById('score-value').innerHTML = this.score
-        // this.round += 1
-        // this.displayRound()
+        this.round += 1
+        this.displayRound()
+    }
+
+    async play(){
+        this.displayRound()
+        while (this.timer > 0){
+            this.timer -= 1
+            document.getElementById('timer-value').innerHTML = this.timer
+            await this.sleep()
+        }
     }
 
     static loadGame(deckArray){
