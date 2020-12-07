@@ -35,8 +35,6 @@ class Display {
     }
 
     static highScores (gameLogs) {
-        // const gameLogs = API.loadGameLogs()
-        // console.log(gameLogs)
         const list = document.getElementById('high-scores')
         gameLogs.forEach(element => {
             let node = document.createElement('li')
