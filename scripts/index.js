@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     API.loadDecks()
-    initializePage()   
+    Initialize.opening()   
     GAME = {} 
 
 })
 
 // this activates landing page button to initialize application
-function initializePage(){
-    document.querySelectorAll('.base-page-button').forEach(item => {
-        item.addEventListener('click', event => {
-            let landing_page = document.getElementById('landing-page-wrapper')
-            let main_page = document.getElementById('main')
-            landing_page.style.display = 'none'
-            main_page.style.display = 'block'
-            // new Game(60, deck)
-            // initializeMaterialize()
-        })
-    })
-}
+// function initializePage(){
+//     document.querySelectorAll('.base-page-button').forEach(item => {
+//         item.addEventListener('click', event => {
+//             let landing_page = document.getElementById('landing-page-wrapper')
+//             let main_page = document.getElementById('main')
+//             landing_page.style.display = 'none'
+//             main_page.style.display = 'block'
+//             // new Game(60, deck)
+//             // initializeMaterialize()
+//         })
+//     })
+// }
 
 
 function deckOption(deckInfo){

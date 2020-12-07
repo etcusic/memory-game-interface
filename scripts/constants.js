@@ -1,1 +1,0 @@
-const main = document.getElementsByTagName('main')[0]
