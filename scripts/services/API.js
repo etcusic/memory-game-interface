@@ -13,4 +13,31 @@ class API {
         .then(data => Game.loadGame(data))
     }
 
+
+    // static loadGameLogs(){
+    //     fetch("http://localhost:3000/game_logs")
+    //     .then(resp => resp.json())
+    //     .then(data => decksToDropdown(data))
+    // }
+
+    static uploadGameLog (gameLog) {
+        const configObject = {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'
+            },
+            body: JSON.stringify(gameLog)
+        }
+
+        fetch("http://localhost:3000/game_logs", configObject)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(json){
+              console.log(json)
+            })
+            // add catch
+    }
+
 }
