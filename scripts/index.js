@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     API.loadDecks()
     Initialize.opening() 
+    Initialize.gameLogIndex()
     // this is super vulnerable, isn't it ??? -> Session class??  
     GAME = new Game
     document.getElementById('game-container').appendChild(Display.random())
     document.getElementById('apply-options').addEventListener('click', () => GAME.play())
-    console.log(GAME)
 
 })
 

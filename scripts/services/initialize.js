@@ -10,11 +10,14 @@ class Initialize {
                 // initializeMaterialize()
             })
         })
-        console.log('working')
     }
 
     // static gameLoad () {
 
     // }
+
+    static gameLogIndex () {
+        document.getElementById('scores-index').addEventListener('click', API.gameLogsIndex())
+    }
 
 }

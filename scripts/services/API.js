@@ -13,11 +13,11 @@ class API {
     }
 
 
-    // static loadGameLogs(){
-    //     fetch("http://localhost:3000/game_logs")
-    //     .then(resp => resp.json())
-    //     .then(data => decksToDropdown(data))
-    // }
+    static loadGameLogs(){
+        fetch("http://localhost:3000/game_logs")
+        .then(resp => resp.json())
+        .then(gameLogs => Display.highScores(gameLogs))
+    }
 
     static uploadGameLog (gameLog) {
         const configObject = {
