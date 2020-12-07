@@ -1,4 +1,6 @@
 class Display {
+
+    // constructor with a node attr ?? that way the Display.node can be deleted - or can I use getters and setters ??
     
     static nineCards () {
         const wrapper = document.createElement('div')
@@ -34,14 +36,29 @@ class Display {
         return div
     }
 
+    static scoresContainer () {
+        const container = document.createElement('div')
+        container.setAttribute('class', 'container purple lighten-2 white-text')
+        return container
+    }
+
+    static orderedList () {
+        const ol = document.createElement('ol')
+        ol.setAttribute('id', 'high-scores-list') //- is this helpful ?? - use div wrapper for CSS instead?
+        return ol
+    }
+
     static highScores (gameLogs) {
-        const list = document.getElementById('high-scores')
+        const container = this.scoresContainer()
+        const ol = this.orderedList()
         gameLogs.forEach(element => {
             let node = document.createElement('li')
             console.log(element.level)
             node.innerText = `level: ${element.level}, score: ${element.score}, deck_id: ${element.deck_id}, user_id: ${element.user_id}`
-            list.appendChild(node)
+            ol.appendChild(node)
         });
+        container.appendChild(ol)
+        document.getElementById('game-container').appendChild(container)
     }
 
 }
