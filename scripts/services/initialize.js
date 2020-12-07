@@ -12,4 +12,8 @@ class Initialize {
         })
     }
 
+    static game () {
+        
+    }
+
 }
