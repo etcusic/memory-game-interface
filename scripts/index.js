@@ -2,24 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     API.loadDecks()
     Initialize.opening()   
-    GAME = {} 
+    GAME = new Game
+    document.getElementById('game-container').appendChild(Display.random())
+    document.getElementById('apply-options').addEventListener('click', () => GAME.play())
 
 })
-
-// this activates landing page button to initialize application
-// function initializePage(){
-//     document.querySelectorAll('.base-page-button').forEach(item => {
-//         item.addEventListener('click', event => {
-//             let landing_page = document.getElementById('landing-page-wrapper')
-//             let main_page = document.getElementById('main')
-//             landing_page.style.display = 'none'
-//             main_page.style.display = 'block'
-//             // new Game(60, deck)
-//             // initializeMaterialize()
-//         })
-//     })
-// }
-
 
 function deckOption(deckInfo){
     const option = document.createElement('li')
@@ -34,6 +21,7 @@ function deckOption(deckInfo){
 }
 
 function decksToDropdown(array){
+    console.log("what the hell??")
     const listOfDecks = document.getElementById('fucked-up-dropdown')
     array.forEach(function(deck){ 
         node = deckOption(deck)
@@ -41,7 +29,6 @@ function decksToDropdown(array){
     })
 }
 
-// add 9 cards to page
 function wipeCards(){
     document.querySelectorAll(".quizzers").forEach(function(cardNode){
         let child = cardNode.children[0]
@@ -49,11 +36,18 @@ function wipeCards(){
     })
 }
 
+function wipeTemplate(){
+    let cont = document.getElementById('game-container')
+    cont.removeChild(document.getElementById('quiz-row-1'))
+    cont.removeChild(document.getElementById('quiz-row-2'))
+    cont.removeChild(document.getElementById('quiz-row-3'))
+}
+
 function displayNineCards(arrayOfCards){
     for (let i = 0; i < 9; i++){
         const node = arrayOfCards[i].createNode()
-        // should change this - each card will have a node attr, and a corresponding data-set number
-        document.getElementById(`card-${i+1}`).appendChild(node)
+        let cardWrapper = document.getElementById(`card-${i+1}`)
+        cardWrapper.appendChild(node)
     }
 }
 

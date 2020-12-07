@@ -76,6 +76,7 @@ class Game {
         Object.assign(GAME, {deck: [], deckId: 0, timer: 60, score: 0, round: 0, question: "", currentCard: {}})
     }
 
+    // move this to class Initialize ???
     static loadGame(deckId, deckArray){
         console.log('game loaded')
         GAME.deck = Game.shuffle(deckArray.map(x => new Card(x)))
