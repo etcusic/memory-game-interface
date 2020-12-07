@@ -35,10 +35,13 @@ class Display {
     }
 
     static highScores (gameLogs) {
+        // const gameLogs = API.loadGameLogs()
+        // console.log(gameLogs)
         const list = document.getElementById('high-scores')
         gameLogs.forEach(element => {
             let node = document.createElement('li')
-            document.innerText = `level: ${element.level}, score: ${element.score}, deck_id: ${element.deck_id}, user_id: ${element.user_id}`
+            console.log(element.level)
+            node.innerText = `level: ${element.level}, score: ${element.score}, deck_id: ${element.deck_id}, user_id: ${element.user_id}`
             list.appendChild(node)
         });
     }

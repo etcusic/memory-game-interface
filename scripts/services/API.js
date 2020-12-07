@@ -14,9 +14,10 @@ class API {
 
 
     static loadGameLogs(){
+        console.log('hello')
         fetch("http://localhost:3000/game_logs")
         .then(resp => resp.json())
-        .then(gameLogs => Display.highScores(gameLogs))
+        .then(gameLogs => Initialize.gameLogIndex(gameLogs))
     }
 
     static uploadGameLog (gameLog) {

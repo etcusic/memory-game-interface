@@ -16,8 +16,11 @@ class Initialize {
 
     // }
 
-    static gameLogIndex () {
-        document.getElementById('scores-index').addEventListener('click', API.gameLogsIndex())
+    static gameLogIndex (gameLogs) {
+        // console.log(gameLogs[0])
+        // gameLogs.map(log => log.level) //new GameLog(log.level, log.score, log.deck_id, log.user_id))
+        // console.log(gameLogs[0].score)
+        Display.highScores(gameLogs)
     }
 
 }
