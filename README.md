@@ -5,7 +5,7 @@ CHECKLIST:
 Landing Page:
 [x] Set up HTML
 [x] Style page
-[ ] Set up JS - event listener on button
+[x] Set up JS - event listener on button
 
 Home Page:
 [x] Set up HTML

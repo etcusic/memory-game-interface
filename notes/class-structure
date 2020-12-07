@@ -22,6 +22,8 @@ class Practice
 class Deck => use to create and edit cards
     - create input nodes
     - handle fetch requests - Create, Update, delete
-    - static shuffle()`
+    - static shuffle()
+
+class Error => class level methods to handle errors??
 
 Set up a JS page of HTML dom node constants - include BASE_URL
