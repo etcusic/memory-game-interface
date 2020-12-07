@@ -10,10 +10,11 @@ class Initialize {
                 // initializeMaterialize()
             })
         })
+        console.log('working')
     }
 
-    static game () {
-        
-    }
+    // static game () {
+
+    // }
 
 }

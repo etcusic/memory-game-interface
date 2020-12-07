@@ -58,6 +58,7 @@ class Game {
     async play(){
         // set timer for each question rather than long countdown
         this.displayRound()
+        // need the check for game over to be faster than what it is
         while (this.timer > 0 && this.score < 2){// this.deck.length){
             this.timer -= 1
             document.getElementById('timer-value').innerHTML = this.timer

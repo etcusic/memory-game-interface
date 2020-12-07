@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     GAME = new Game
     document.getElementById('game-container').appendChild(Display.random())
     document.getElementById('apply-options').addEventListener('click', () => GAME.play())
+    console.log(GAME)
 
 })
 
@@ -21,7 +22,6 @@ function deckOption(deckInfo){
 }
 
 function decksToDropdown(array){
-    console.log("what the hell??")
     const listOfDecks = document.getElementById('fucked-up-dropdown')
     array.forEach(function(deck){ 
         node = deckOption(deck)
