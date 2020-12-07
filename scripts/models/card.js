@@ -3,7 +3,6 @@ class Card {
         this.id = hash.id
         this.side_a = hash.side_a
         this.side_b = hash.side_b
-        this.deck_id = hash.deck_id
         // this.node = this.createNode()
         // would it be better to create node here? how would I designate side A or B being shown??
     }

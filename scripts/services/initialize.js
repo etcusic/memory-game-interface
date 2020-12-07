@@ -13,7 +13,7 @@ class Initialize {
         console.log('working')
     }
 
-    // static game () {
+    // static gameLoad () {
 
     // }
 

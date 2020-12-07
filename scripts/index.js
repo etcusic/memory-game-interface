@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     API.loadDecks()
-    Initialize.opening()   
+    Initialize.opening() 
+    // this is super vulnerable, isn't it ??? -> Session class??  
     GAME = new Game
     document.getElementById('game-container').appendChild(Display.random())
     document.getElementById('apply-options').addEventListener('click', () => GAME.play())
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
+// is there a way to extend helper functions to Game class so that there is less clutter ???
 function deckOption(deckInfo){
     const option = document.createElement('li')
     option.setAttribute('value', deckInfo.id)

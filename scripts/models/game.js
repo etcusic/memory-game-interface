@@ -67,10 +67,10 @@ class Game {
         this.gameOver()
     }
 
-    // gameOver()
     gameOver() {
-        API.uploadGameLog({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId})
         console.log('game over')
+        console.log({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId})
+        API.uploadGameLog({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId})
         document.getElementById('term-value').innerText = "GAME OVER"
         document.getElementById('game-container').replaceChild(Display.random(), this.cardDisplay)
         delete this.cardDisplay
@@ -89,7 +89,6 @@ class Game {
         document.getElementById('timer-value').innerHTML = GAME.timer
         document.getElementById('score-value').innerHTML = GAME.score
         document.querySelectorAll(".quizzers").forEach(cardNode => cardNode.addEventListener('click', () => GAME.checkAnswer(cardNode)))
-        console.log(GAME)
 
     }
 
