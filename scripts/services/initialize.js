@@ -13,12 +13,17 @@ class Initialize {
         })
     }
 
+    static gameLogs () {
+        GameBoard.wipe()
+        API.loadGameLogs()
+    }
+
     static basePage () {
         API.loadDecks()
         GameBoard.display()
         SidePanel.basePage()
         document.getElementById('apply-options').addEventListener('click', () => GAME.play())
-        document.getElementById('scores-index').addEventListener('click', () => API.loadGameLogs())
+        document.getElementById('scores-index').addEventListener('click', () => this.gameLogs())
     }
 
 }

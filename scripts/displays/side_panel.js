@@ -52,7 +52,6 @@ class SidePanel {
         ul.setAttribute('id', 'side-panel-list')
         ul.setAttribute('class', 'collection z-depth-2')
         return ul
-        // document.getElementById('top-side-panel-div').appendChild(ul)
     }
 
     static clearList () {

@@ -1,12 +1,16 @@
 class GameOver {
 
+    static wipe () {
+        document.getElementById('game-container').removeChild(document.getElementById('score-board'))
+        document.getElementById('game-container').removeChild(document.getElementById('game-over-container'))
+    }
+
     // should this be somewhere else ?? - initializers maybe?
     static resetPageButton (gameLog) {
         const button = document.getElementById('reset-page')
         button.addEventListener('click', function(){
             API.uploadGameLog(gameLog)
-            document.getElementById('game-container').removeChild(document.getElementById('score-board'))
-            document.getElementById('game-container').removeChild(document.getElementById('game-over-container'))
+            GameOver.wipe()
             GameBoard.display()     // this would probably be better in Initializer
         })
     }

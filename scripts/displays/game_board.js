@@ -1,5 +1,11 @@
 class GameBoard {
 
+    static wipe () {
+        const container = document.getElementById('game-container')
+        container.removeChild(document.getElementById('score-board'))
+        container.removeChild(document.getElementById('cards-wrapper'))
+    }
+
     static template () {
         return `
         <div id="nine-cards" class='col s10 push-s1'>
@@ -44,7 +50,6 @@ class GameBoard {
         div.setAttribute('id', 'cards-wrapper')
         div.innerHTML += this.template()
         return div
-        
     }
 
     static display () {
