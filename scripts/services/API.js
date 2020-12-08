@@ -1,5 +1,11 @@
 class API {
 
+    static loadMuppets () {
+        fetch("http://localhost:3000/users")
+        .then(resp => resp.json())
+        .then(data => infoToDropdown(data))
+    }
+
     static loadDecks() {
         fetch("http://localhost:3000/decks")
         .then(resp => resp.json())

@@ -1,21 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Initialize.openingPage() 
-    Initialize.basePage()
+    Initialize.openingPage() 
+    // Initialize.basePage()
+    API.loadMuppets()
 
-    // Initialize.gameLogIndex()
     // this is super vulnerable, isn't it ??? -> Session class??  
     GAME = new Game
 
-    // GameBoard.display()
-
-    
-    // document.getElementById('apply-options').addEventListener('click', () => GAME.play())
-    // document.getElementById('scores-index').addEventListener('click', () => API.loadGameLogs())
-
-    // document.getElementById('reset-page').addEventListener('click', () => Display.reset())
-
 })
+
+// SIDE PANEL CLASS ??
+function muppetOption(muppetInfo){
+    const option = document.createElement('li')
+    option.setAttribute('value', muppetInfo.id)
+    option.setAttribute('class', "collection-item purple lighten-2 white-text")
+    option.innerText = muppetInfo.name
+    // option.addEventListener('click', function(e) { 
+    //     // API.loadMuppet(option.value)
+    //     console.log(option)
+    // })
+    return option
+
+}
+
+function infoToDropdown(array){
+    const ul = document.getElementById('side-panel-list')
+    array.forEach(function(deck){ 
+        node = muppetOption(deck)
+        ul.appendChild(node)
+    })
+}
 
 // is there a way to extend helper functions to Game class so that there is less clutter ???
 function deckOption(deckInfo){
