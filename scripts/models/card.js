@@ -17,4 +17,10 @@ class Card {
         return cardNode
     }
 
+    static blank () {
+        const div = htmlNode.div()
+        div.setAttribute('class', 'quiz-card card center-align z-depth-4')
+        return div
+    }
+
 }
