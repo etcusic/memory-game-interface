@@ -85,7 +85,7 @@ class Game {
         GAME.cardDisplay = Display.nineCards()
         //should I make these global constants ??? - or maybe a DOM class with these elements as class methods?
         // => DOM.adjustTimer(x) => document.getElementById('timer-value').innerHTML = x
-        document.getElementById('game-container').replaceChild(GAME.cardDisplay, document.getElementById('random'))
+        document.getElementById('game-container').replaceChild(GAME.cardDisplay, document.getElementById('place-holder'))
         document.getElementById('timer-value').innerHTML = GAME.timer
         document.getElementById('score-value').innerHTML = GAME.score
         document.querySelectorAll(".quizzers").forEach(cardNode => cardNode.addEventListener('click', () => GAME.checkAnswer(cardNode)))
