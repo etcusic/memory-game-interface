@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    API.loadDecks()
-    Initialize.opening() 
+    // Initialize.openingPage() 
+    Initialize.basePage()
+
     // Initialize.gameLogIndex()
     // this is super vulnerable, isn't it ??? -> Session class??  
     GAME = new Game
@@ -9,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // GameBoard.display()
 
     
-    document.getElementById('apply-options').addEventListener('click', () => GAME.play())
-    document.getElementById('scores-index').addEventListener('click', () => API.loadGameLogs())
+    // document.getElementById('apply-options').addEventListener('click', () => GAME.play())
+    // document.getElementById('scores-index').addEventListener('click', () => API.loadGameLogs())
 
     // document.getElementById('reset-page').addEventListener('click', () => Display.reset())
 

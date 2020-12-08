@@ -1,16 +1,24 @@
 class Initialize {
 
-    static opening () {
+    static openingPage () {
+
         document.querySelectorAll('.base-page-button').forEach(item => {
             item.addEventListener('click', event => {
-                let landing_page = document.getElementById('landing-page-wrapper')
-                let main_page = document.getElementById('main')
-                // refactor once you're no longer hiding divs
-                landing_page.style.display = 'none'
-                main_page.style.display = 'block'
+                document.getElementById('left-container').removeChild(document.getElementById('opening-page-button-div-wrapper'))
+                document.getElementById('game-container').removeChild(document.getElementById('landing-page-wrapper'))
+                self.basePage()
+                
                 // initializeMaterialize()
             })
         })
+    }
+
+    static basePage () {
+        API.loadDecks()
+        GameBoard.display()
+        SidePanel.basePage()
+        document.getElementById('apply-options').addEventListener('click', () => GAME.play())
+        document.getElementById('scores-index').addEventListener('click', () => API.loadGameLogs())
     }
 
 }
