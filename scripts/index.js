@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('apply-options').addEventListener('click', () => GAME.play())
     document.getElementById('scores-index').addEventListener('click', () => API.loadGameLogs())
 
+    // document.getElementById('reset-page').addEventListener('click', () => Display.reset())
+
 })
 
 // is there a way to extend helper functions to Game class so that there is less clutter ???

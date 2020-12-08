@@ -38,6 +38,7 @@ class Display {
 
     static scoresContainer () {
         const container = document.createElement('div')
+        container.setAttribute('id', 'high-scores-container')
         container.setAttribute('class', 'container purple lighten-2 white-text z-depth-4')
         return container
     }
@@ -69,9 +70,25 @@ class Display {
             ol.appendChild(node)
         });
         wrap.appendChild(ol)
+        wrap.appendChild(this.resetButton())
         row.appendChild(wrap)
         container.appendChild(row)
         document.getElementById('game-container').appendChild(container)
+    }
+
+    static resetButton () {
+        const button = document.createElement('button')
+        button.setAttribute('id', 'reset-page')
+        button.setAttribute('class', 'left btn-small right')
+        button.innerText = 'Reset to Play'
+        button.addEventListener('click', () => this.reset())
+        return button
+    }
+
+    static reset () {
+        document.getElementById('game-container').replaceChild(Display.random(), document.getElementById('high-scores-container'))
+
+        // Display.random()
     }
 
 }
