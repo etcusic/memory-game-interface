@@ -5,7 +5,9 @@ class GameOver {
         const button = document.getElementById('reset-page')
         button.addEventListener('click', function(){
             API.uploadGameLog(gameLog)
-            document.getElementById('game-container').replaceChild(htmlNode.placeHolderDiv(), document.getElementById('game-over-container'))
+            document.getElementById('game-container').removeChild(document.getElementById('score-board'))
+            document.getElementById('game-container').removeChild(document.getElementById('game-over-container'))
+            GameBoard.display()     // this would probably be better in Initializer
         })
     }
 
@@ -29,7 +31,6 @@ class GameOver {
         const container = htmlNode.row()
         container.setAttribute('id', 'game-over-container')
         container.innerHTML += this.content(score)
-        console.log(container)
         return container
     }
 

@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // this is super vulnerable, isn't it ??? -> Session class??  
     GAME = new Game
 
-    GameBoard.display()
-    // document.getElementById('game-container').appendChild(ScoreBoard.display())
-    // document.getElementById('game-container').appendChild(htmlNode.placeHolderDiv())
+    // GameBoard.display()
+
+    
     document.getElementById('apply-options').addEventListener('click', () => GAME.play())
     document.getElementById('scores-index').addEventListener('click', () => API.loadGameLogs())
 
@@ -30,7 +30,7 @@ function deckOption(deckInfo){
 }
 
 function decksToDropdown(array){
-    const listOfDecks = document.getElementById('fucked-up-dropdown')
+    const listOfDecks = document.getElementById('side-panel-list')
     array.forEach(function(deck){ 
         node = deckOption(deck)
         listOfDecks.appendChild(node)
