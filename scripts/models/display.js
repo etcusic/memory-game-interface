@@ -38,26 +38,39 @@ class Display {
 
     static scoresContainer () {
         const container = document.createElement('div')
-        container.setAttribute('class', 'container purple lighten-2 white-text')
+        container.setAttribute('class', 'container purple lighten-2 white-text z-depth-4')
         return container
+    }
+
+    static divWrap () {
+        // make one of these for reusability
+        return document.createElement('div')
     }
 
     static orderedList () {
         const ol = document.createElement('ol')
         ol.setAttribute('id', 'high-scores-list') //- is this helpful ?? - use div wrapper for CSS instead?
+        ol.setAttribute('class', 'collection')
         return ol
     }
 
     static highScores (gameLogs) {
+        const row = this.divWrap()
+        row.setAttribute('class', 'row')
+        row.setAttribute('id', 'listymaker')
+        const wrap = this.divWrap()
+        wrap.setAttribute('class', 'col s10 push-s1')
         const container = this.scoresContainer()
         const ol = this.orderedList()
         gameLogs.forEach(element => {
             let node = document.createElement('li')
-            console.log(element.level)
+            node.setAttribute('class', 'collection-item purple lighten-2 white-text')
             node.innerText = `level: ${element.level}, score: ${element.score}, deck_id: ${element.deck_id}, user_id: ${element.user_id}`
             ol.appendChild(node)
         });
-        container.appendChild(ol)
+        wrap.appendChild(ol)
+        row.appendChild(wrap)
+        container.appendChild(row)
         document.getElementById('game-container').appendChild(container)
     }
 
