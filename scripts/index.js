@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // this is super vulnerable, isn't it ??? -> Session class??  
     GAME = new Game
 
-    document.getElementById('game-container').appendChild(NODE.placeHolder)
+    document.getElementById('game-container').appendChild(htmlNode.placeHolderDiv())
     document.getElementById('apply-options').addEventListener('click', () => GAME.play())
     document.getElementById('scores-index').addEventListener('click', () => API.loadGameLogs())
 
