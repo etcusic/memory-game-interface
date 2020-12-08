@@ -1,6 +1,12 @@
 class Display {
 
-    // constructor with a node attr ?? that way the Display.node can be deleted - or can I use getters and setters ??
+    // NODE = {
+    //     div: document.createElement('div'),
+    //     ol: document.createElement('ol'),
+    //     ul: document.createElement('ul'),
+    //     li: document.createElement('li')
+
+    // }
     
     static nineCards () {
         const wrapper = document.createElement('div')

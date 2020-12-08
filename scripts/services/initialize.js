@@ -12,12 +12,4 @@ class Initialize {
         })
     }
 
-    // static gameLoad () {
-
-    // }
-
-    // static gameLogIndex (gameLogs) {
-    //     Display.highScores(gameLogs)
-    // }
-
 }
