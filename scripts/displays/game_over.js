@@ -5,7 +5,7 @@ class GameOver {
         const button = document.getElementById('reset-page')
         button.addEventListener('click', function(){
             API.uploadGameLog(gameLog)
-            document.getElementById('game-container').replaceChild(NODE.placeHolder, document.getElementById('game-over-container'))
+            document.getElementById('game-container').replaceChild(htmlNode.placeHolderDiv(), document.getElementById('game-over-container'))
         })
     }
 
