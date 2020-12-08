@@ -70,9 +70,11 @@ class Game {
     gameOver() {
         console.log('game over')
         console.log({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId})
+        // uploadGameLog goes in resetPageButton function
         API.uploadGameLog({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId})
         document.getElementById('term-value').innerText = "GAME OVER"
         document.getElementById('game-container').replaceChild(GameOver.setDisplay(this.score), this.cardDisplay)
+        GameOver.resetPageButton() // have the GameLog info go through this function -> then activated by submit button
         delete this.cardDisplay
         // clean this up 
         Object.assign(GAME, {deck: [], deckId: 0, timer: 60, score: 0, round: 0, question: "", currentCard: {}})
