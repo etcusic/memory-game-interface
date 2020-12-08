@@ -5,6 +5,7 @@ class Initialize {
             item.addEventListener('click', event => {
                 let landing_page = document.getElementById('landing-page-wrapper')
                 let main_page = document.getElementById('main')
+                // refactor once you're no longer hiding divs
                 landing_page.style.display = 'none'
                 main_page.style.display = 'block'
                 // initializeMaterialize()

@@ -3,6 +3,7 @@ class Display {
     static nineCards () {
         const wrapper = document.createElement('div')
         wrapper.setAttribute('id', 'nine-cards')
+        wrapper.setAttribute('class', 'col s10 push-s1')
         this.row(1, wrapper)
         this.row(4, wrapper)
         this.row(7, wrapper)

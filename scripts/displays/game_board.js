@@ -1,6 +1,6 @@
 class GameBoard {
 
-    static content () {
+    static template () {
         return `
         <div id="nine-cards" class='col s10 push-s1'>
                 <div id="quiz-row-1" class="row quiz-row">
@@ -8,32 +8,32 @@ class GameBoard {
                         <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                     <div id="card-2" class="quizzers col s4">
-                        <div data-card="17" class="quiz-card card center-align z-depth-4" value="Atlanta">Falcons</div>
+                        <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                     <div id="card-3" class="quizzers col s4">
-                        <div data-card="14" class="quiz-card card center-align z-depth-4" value="Detroit">Lions</div>
+                        <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                 </div>
                 <div id="quiz-row-4" class="row quiz-row">
                     <div id="card-4" class="quizzers col s4">
-                        <div data-card="13" class="quiz-card card center-align z-depth-4" value="Minnesota">Vikings</div>
+                        <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                     <div id="card-5" class="quizzers col s4">
-                        <div data-card="12" class="quiz-card card center-align z-depth-4" value="Chicago">Bears</div>
+                        <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                     <div id="card-6" class="quizzers col s4">
-                        <div data-card="22" class="quiz-card card center-align z-depth-4" value="Cincinnati">Bengals</div>
+                        <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                 </div>
                 <div id="quiz-row-7" class="row quiz-row">
                     <div id="card-7" class="quizzers col s4">
-                        <div data-card="4" class="quiz-card card center-align z-depth-4" value="Green Bay">Packers</div>
+                        <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                     <div id="card-8" class="quizzers col s4">
-                        <div data-card="25" class="quiz-card card center-align z-depth-4" value="Dallas">Cowboys</div>
+                        <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                     <div id="card-9" class="quizzers col s4">
-                        <div data-card="28" class="quiz-card card center-align z-depth-4" value="Arizona">Cardinals</div>
+                        <div class="quiz-card card center-align z-depth-4"></div>
                     </div>
                 </div>
             </div>`
@@ -41,7 +41,8 @@ class GameBoard {
 
     static cardsWrapper () {
         const div = htmlNode.row()
-        div.innerHTML += this.content()
+        div.setAttribute('id', 'cards-wrapper')
+        div.innerHTML += this.template()
         return div
         
     }
