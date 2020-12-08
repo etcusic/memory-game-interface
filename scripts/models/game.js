@@ -72,8 +72,9 @@ class Game {
         console.log({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId})
         API.uploadGameLog({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId})
         document.getElementById('term-value').innerText = "GAME OVER"
-        document.getElementById('game-container').replaceChild(Display.random(), this.cardDisplay)
+        document.getElementById('game-container').replaceChild(GameOver.setDisplay(this.score), this.cardDisplay)
         delete this.cardDisplay
+        // clean this up 
         Object.assign(GAME, {deck: [], deckId: 0, timer: 60, score: 0, round: 0, question: "", currentCard: {}})
     }
 

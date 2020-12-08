@@ -32,4 +32,22 @@ class htmlNode {
         div.setAttribute('class', 'container')
         return div
     }
+
+    static centeredDiv () {
+        const div = document.createElement('div')
+        div.setAttribute('class', 'center-align')
+        return div
+    }
+
+    static buttonSmall () {
+        const button = document.createElement('button')
+        button.setAttribute('class', 'btn-small')
+        return button
+    }
+
+    static buttonLarge () {
+        const button = document.createElement('button')
+        button.setAttribute('class', 'btn-large')
+        return button
+    }
 }
