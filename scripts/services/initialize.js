@@ -26,11 +26,19 @@ class Initialize {
         document.getElementById('scores-index').addEventListener('click', () => this.gameLogs())
     }
 
+    static resetFromQuitButton () {
+        document.getElementById('quit-play-button').addEventListener('click', () => { 
+            SidePanel.wipeNodes([document.getElementById('quit-play-button-div-wrapper')])
+            Game.quit() // still needs work - need an instance to work with
+        })
+    }
+
     // STILL NEED A STOP GAME BUTTON IN THE SIDE PANEL -> RESETS TO BASE PAGE
     static gamePlay(){
         SidePanel.wipeNodes(SidePanel.prePlayNodes())
         SidePanel.build([SidePanel.quitPlayButton()])
-        // let game = new Game ???
+        this.resetFromQuitButton()
+        // let game = new Game ??? => Game.new()
         GAME.play()
     }
 

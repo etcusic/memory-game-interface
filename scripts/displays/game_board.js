@@ -1,9 +1,10 @@
 class GameBoard {
 
     static wipe () {
+        // const container = document.getElementById('game-container')
+        // container.removeChild(document.getElementById('score-board'))
         const container = document.getElementById('game-container')
-        container.removeChild(document.getElementById('score-board'))
-        container.removeChild(document.getElementById('cards-wrapper'))
+        container.childNodes.forEach( node => container.removeChild(node) )
     }
 
     static template () {

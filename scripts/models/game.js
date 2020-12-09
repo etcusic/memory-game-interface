@@ -13,6 +13,7 @@ class Game {
         // need to incorporate improvements here
         this.userId = 1
         this.level = 1
+        this.quit = false
     }
 
     sleep() {
@@ -59,7 +60,7 @@ class Game {
         // set timer for each question rather than long countdown
         this.displayRound()
         // need the check for game over to be faster than what it is
-        while (this.timer > 0 && this.score < 2){// this.deck.length){
+        while ( !this.quit && this.timer > 0 && this.score < 2 ){ // this.round < this.deck.length ){
             this.timer -= 1
             document.getElementById('timer-value').innerHTML = this.timer
             await this.sleep()
@@ -74,7 +75,7 @@ class Game {
         GameOver.resetPageButton({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId}) 
         delete this.cardDisplay
         // clean this up - better way than global constant GAME
-        Object.assign(GAME, {deck: [], deckId: 0, timer: 60, score: 0, round: 0, question: "", currentCard: {}})
+        Object.assign(this, {deck: [], deckId: 0, timer: 60, score: 0, round: 0, question: "", currentCard: {}})
     }
 
     // move this to class Initialize ???
@@ -83,16 +84,17 @@ class Game {
         GAME.deck = Game.shuffle(deckArray.map(x => new Card(x)))
         GAME.deckId = deckId
         GAME.cardDisplay = Display.nineCards()
-        //should I make these global constants ??? - or maybe a DOM class with these elements as class methods?
-        // => DOM.adjustTimer(x) => document.getElementById('timer-value').innerHTML = x
 
         document.getElementById('game-container').replaceChild(GAME.cardDisplay, document.getElementById('cards-wrapper'))
-        // document.getElementById('game-container').appendChild(GAME.cardDisplay)
-
         document.getElementById('timer-value').innerHTML = GAME.timer
         document.getElementById('score-value').innerHTML = GAME.score
         document.querySelectorAll(".quizzers").forEach(cardNode => cardNode.addEventListener('click', () => GAME.checkAnswer(cardNode)))
+    }
 
+    static quit () {
+        // need to pass in a game instance ?? - Session.currentGame ??
+        // or should this be an instance method ??
+        GAME.quit = true
     }
 
 }

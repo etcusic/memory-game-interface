@@ -1,5 +1,12 @@
 class ScoreBoard {
 
+    static wipe () {
+        // console.log(document.getElementById('score-board'))
+        // document.getElementById('game-container').removeChild(document.getElementById('score-board'))
+        const container = document.getElementById('game-container')
+        container.childNodes.forEach( node => container.removeChild(node) )
+    }
+
     static content () {
         return `
             <div class="col s8 push-s2">

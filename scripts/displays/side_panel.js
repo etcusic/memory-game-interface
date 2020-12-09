@@ -45,6 +45,7 @@ class SidePanel {
         `
     }
 
+    // maybe incorporate build() for this
     static basePage () {
         const container = document.getElementById('left-container')
         container.innerHTML += this.playGameButton()
@@ -74,8 +75,10 @@ class SidePanel {
     // STILL NEED A STOP GAME BUTTON HERE -> RESETS TO BASE PAGE - PUT BUTTON WITH EVENT LISTENER IN INITIALIZER CLASS
     static build (nodesArray) {
         const panel = document.getElementById('left-container')
-        nodesArray.forEach( node => panel.innerHTML += node)
+        nodesArray.forEach( node => panel.innerHTML += node )
     }
+
+    
 
     // SCOPE OPTIONS
     // APPLY SCOPE OPTIONS BUTTON
