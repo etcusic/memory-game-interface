@@ -1,16 +1,19 @@
 class GameOver {
 
     static wipe () {
+        SidePanel.wipeAll()
         document.getElementById('game-container').removeChild(document.getElementById('score-board'))
         document.getElementById('game-container').removeChild(document.getElementById('game-over-container'))
     }
 
     static resetPageButton (gameLog) {
         const button = document.getElementById('reset-page')
-        button.addEventListener('click', function(){
+        button.addEventListener('click', () => {
             API.uploadGameLog(gameLog)
             GameOver.wipe()
+            SidePanel.build([SidePanel.listDiv(), SidePanel.playGameButton(), SidePanel.highScoresButton()])
             GameBoard.display()
+            API.loadDecks()
         })
     }
 
@@ -31,6 +34,7 @@ class GameOver {
     }
 
     static setDisplay (score) {
+        SidePanel.wipeAll()
         const container = htmlNode.row()
         container.setAttribute('id', 'game-over-container')
         container.innerHTML += this.content(score)

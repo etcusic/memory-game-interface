@@ -1,5 +1,10 @@
 class SidePanel {
 
+    static wipeAll () {
+        const container = document.getElementById('left-container')
+        container.childNodes.forEach( node => container.removeChild(node) )
+    }
+
     static wipeNodes(nodesArray) {
         nodesArray.forEach(node => document.getElementById('left-container').removeChild(node))
     }
@@ -72,13 +77,22 @@ class SidePanel {
         ]
     }
 
+    static listDiv () {
+        return `
+            <div id='top-side-panel-div'>
+                <ul id='side-panel-list' class='collection z-depth-2'>
+                </ul>
+            </div>
+        `
+    }
+
     // STILL NEED A STOP GAME BUTTON HERE -> RESETS TO BASE PAGE - PUT BUTTON WITH EVENT LISTENER IN INITIALIZER CLASS
     static build (nodesArray) {
         const panel = document.getElementById('left-container')
         nodesArray.forEach( node => panel.innerHTML += node )
     }
 
-    
+
 
     // SCOPE OPTIONS
     // APPLY SCOPE OPTIONS BUTTON

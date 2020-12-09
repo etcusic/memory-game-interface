@@ -45,6 +45,7 @@ function deckOption(deckInfo){
 }
 
 function decksToDropdown(array){
+    // need to create side panel list ??
     const listOfDecks = document.getElementById('side-panel-list')
     array.forEach(function(deck){ 
         node = deckOption(deck)

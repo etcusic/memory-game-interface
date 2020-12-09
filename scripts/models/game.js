@@ -93,7 +93,7 @@ class Game {
 
     static quit () {
         // need to pass in a game instance ?? - Session.currentGame ??
-        // or should this be an instance method ??
+        // or should this be an instance method ?? => this.quit = true
         GAME.quit = true
     }
 
