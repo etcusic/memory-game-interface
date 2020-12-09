@@ -27,9 +27,9 @@ class SidePanel {
     
     static basePageButton () {
         return `
-            <div id="base-page-button-div-wrapper" class="row">
+            <div id="base-page-button-div-wrapper" class="row three-percent">
                 <div class="col s12">
-                    <button id='base-page-button' class='left btn-large'>BACK</button>
+                    <button id='base-page-button' class='left btn-large purple lighten-2'>BACK</button>
                 </div>
             </div>
         `
@@ -39,7 +39,7 @@ class SidePanel {
         return `
             <div id="quit-play-button-div-wrapper" class="row">
                 <div class="col s12">
-                    <button id='quit-play-button' class='left btn-large'>QUIT GAME</button>
+                    <button id='quit-play-button' class='left btn-large purple lighten-2'>QUIT GAME</button>
                 </div>
             </div>
         `
@@ -72,6 +72,10 @@ class SidePanel {
     }
 
     // STILL NEED A STOP GAME BUTTON HERE -> RESETS TO BASE PAGE - PUT BUTTON WITH EVENT LISTENER IN INITIALIZER CLASS
+    static build (nodesArray) {
+        const panel = document.getElementById('left-container')
+        nodesArray.forEach( node => panel.innerHTML += node)
+    }
 
     // SCOPE OPTIONS
     // APPLY SCOPE OPTIONS BUTTON
