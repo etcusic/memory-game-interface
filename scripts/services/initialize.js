@@ -36,7 +36,8 @@ class Initialize {
     // STILL NEED A STOP GAME BUTTON IN THE SIDE PANEL -> RESETS TO BASE PAGE
     static gamePlay(){
         SidePanel.wipeNodes(SidePanel.prePlayNodes())
-        SidePanel.build([SidePanel.quitPlayButton()])
+        // SidePanel.build([SidePanel.quitPlayButton()])
+        document.getElementById('left-container').innerHTML += SidePanel.quitPlayButton()
         this.resetFromQuitButton()
         // let game = new Game ??? => Game.new()
         GAME.play()

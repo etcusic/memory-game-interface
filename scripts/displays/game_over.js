@@ -1,7 +1,7 @@
 class GameOver {
 
     static wipe () {
-        SidePanel.wipeAll()
+        // SidePanel.wipeAll()
         document.getElementById('game-container').removeChild(document.getElementById('score-board'))
         document.getElementById('game-container').removeChild(document.getElementById('game-over-container'))
     }
@@ -34,7 +34,7 @@ class GameOver {
     }
 
     static setDisplay (score) {
-        SidePanel.wipeAll()
+        SidePanel.wipeNodes(SidePanel.postPlayNodes())
         const container = htmlNode.row()
         container.setAttribute('id', 'game-over-container')
         container.innerHTML += this.content(score)

@@ -1,7 +1,10 @@
 class SidePanel {
 
     static wipeAll () {
+        // const container = document.getElementById('left-container')
+        // container.childNodes.forEach( node => container.removeChild(node) )
         const container = document.getElementById('left-container')
+        console.log(container.childNodes)
         container.childNodes.forEach( node => container.removeChild(node) )
     }
 
@@ -75,6 +78,10 @@ class SidePanel {
             document.getElementById('play-game-button-wrapper'),
             document.getElementById('high-scores-button-wrapper')
         ]
+    }
+
+    static postPlayNodes () {
+        return [document.getElementById('quit-play-button-div-wrapper')]
     }
 
     static listDiv () {
