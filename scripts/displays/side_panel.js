@@ -1,5 +1,9 @@
 class SidePanel {
 
+    static wipeNodes(nodesArray) {
+        nodesArray.forEach(node => document.getElementById('left-container').removeChild(node))
+    }
+
     static playGameButton () {
         return `
             <div id="play-game-button-wrapper" class="row">
@@ -58,6 +62,16 @@ class SidePanel {
         const div = document.getElementById('top-side-panel-div')
         div.replaceChild(this.createUl(), document.getElementById('side-panel-list'))
     }
+
+    static prePlayNodes () {
+        return [
+            document.getElementById('top-side-panel-div'),
+            document.getElementById('play-game-button-wrapper'),
+            document.getElementById('high-scores-button-wrapper')
+        ]
+    }
+
+    // STILL NEED A STOP GAME BUTTON HERE -> RESETS TO BASE PAGE - PUT BUTTON WITH EVENT LISTENER IN INITIALIZER CLASS
 
     // SCOPE OPTIONS
     // APPLY SCOPE OPTIONS BUTTON

@@ -5,13 +5,12 @@ class GameOver {
         document.getElementById('game-container').removeChild(document.getElementById('game-over-container'))
     }
 
-    // should this be somewhere else ?? - initializers maybe?
     static resetPageButton (gameLog) {
         const button = document.getElementById('reset-page')
         button.addEventListener('click', function(){
             API.uploadGameLog(gameLog)
             GameOver.wipe()
-            GameBoard.display()     // this would probably be better in Initializer
+            GameBoard.display()
         })
     }
 

@@ -22,8 +22,15 @@ class Initialize {
         API.loadDecks()
         GameBoard.display()
         SidePanel.basePage()
-        document.getElementById('apply-options').addEventListener('click', () => GAME.play())
+        document.getElementById('apply-options').addEventListener('click', () => Initialize.gamePlay())
         document.getElementById('scores-index').addEventListener('click', () => this.gameLogs())
+    }
+
+    // STILL NEED A STOP GAME BUTTON IN THE SIDE PANEL -> RESETS TO BASE PAGE
+    static gamePlay(){
+        SidePanel.wipeNodes(SidePanel.prePlayNodes())
+        // let game = new Game ???
+        GAME.play()
     }
 
 }
