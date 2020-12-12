@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     Initialize.openingPage() 
-    // Initialize.basePage()
     API.loadMuppets()
 
     // this is super vulnerable, isn't it ??? -> Session class??  
     GAME = new Game
 
+    // let display = new DisplayInstance
+    // display.resetPanel()
+    // display.resetMain()
 })
 
 // SIDE PANEL CLASS ??

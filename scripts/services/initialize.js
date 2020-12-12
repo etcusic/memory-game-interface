@@ -28,7 +28,8 @@ class Initialize {
 
     static resetFromQuitButton () {
         document.getElementById('quit-play-button').addEventListener('click', () => { 
-            SidePanel.wipeNodes([document.getElementById('quit-play-button-div-wrapper')])
+            // SidePanel.wipeNodes([document.getElementById('quit-play-button-div-wrapper')])
+            // SidePanel.wipeNodes(SidePanel.postPlayNodes())
             Game.quit() // still needs work - need an instance to work with
         })
     }
