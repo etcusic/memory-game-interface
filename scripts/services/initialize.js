@@ -1,47 +1,67 @@
 class Initialize {
 
-    static openingPage () {
-        document.querySelectorAll('.base-page-button').forEach(item => {
-            item.addEventListener('click', event => {
-                document.getElementById('left-container').removeChild(document.getElementById('opening-page-button-div-wrapper'))
-                document.getElementById('game-container').removeChild(document.getElementById('landing-page-wrapper'))
-                SidePanel.clearList()
-                this.basePage()
-                
-                // initializeMaterialize()
-            })
-        })
+    static newPromise (myFunction) {
+        return new Promise(() => myFunction)
     }
 
-    static gameLogs () {
-        GameBoard.wipe()
-        API.loadGameLogs()
+    static session (id, name) {
+        const newSession = new Session (id, name)
+        this.beakerPage(newSession)
     }
 
-    static basePage () {
-        API.loadDecks()
-        GameBoard.display()
-        SidePanel.basePage()
-        document.getElementById('apply-options').addEventListener('click', () => Initialize.gamePlay())
-        document.getElementById('scores-index').addEventListener('click', () => this.gameLogs())
+    static game (deck, cards, session) {
+        deck.createCards(cards)
+        let newGame = new Game (session, deck)
+        newGame.deck.cards = cards.map(card => new Card (card.id, card.side_a, card.side_b))
+        newGame.deck.shuffleAndSet('A')
+        session.game = newGame
+        Initialize.playSetPage(session)
+    }
+ 
+    static landingPage () {
+        this.newPromise( Display.buildPage(LandingPage.initialView()) )
+        .then( API.loadMuppets() )
     }
 
-    static resetFromQuitButton () {
-        document.getElementById('quit-play-button').addEventListener('click', () => { 
-            // SidePanel.wipeNodes([document.getElementById('quit-play-button-div-wrapper')])
-            // SidePanel.wipeNodes(SidePanel.postPlayNodes())
-            Game.quit() // still needs work - need an instance to work with
-        })
+    static beakerPage (session) {
+        this.newPromise(Display.wipeAll())
+        .then( Display.buildPage(BeakerPage.initialView(session)) )
+        .then( BeakerPage.setListeners(session) )
     }
 
-    // STILL NEED A STOP GAME BUTTON IN THE SIDE PANEL -> RESETS TO BASE PAGE
-    static gamePlay(){
-        SidePanel.wipeNodes(SidePanel.prePlayNodes())
-        // SidePanel.build([SidePanel.quitPlayButton()])
-        document.getElementById('left-container').innerHTML += SidePanel.quitPlayButton()
-        this.resetFromQuitButton()
-        // let game = new Game ??? => Game.new()
-        GAME.play()
+    static basePage (session) {
+        this.newPromise(Display.wipeAll())
+        .then( Display.buildPage(BasePage.initialView(session)) )
+        .then( API.loadDecks(session) )
+    }
+
+    // ActionListeners need some work in reference to their pages/views/stages
+    static playSetPage (session) {
+        this.newPromise(Display.wipeAll())
+        .then( Display.buildPage(PlaySetPage.initialView(session)) )
+        .then( document.getElementById('term-value').innerText = session.game.deck.title )
+        .then( document.querySelectorAll('.quizzers').forEach( div => div.appendChild(Card.blank()) ))
+        .then( PlaySetPage.setListeners(session) )
+    }
+   
+    static playGamePage (session) {
+        this.newPromise(Display.wipePanel())
+        .then( Display.buildPanel([PlayGamePage.panelHTML(session)]))
+        .then( session.game.play())
+        .then( PlayGamePage.setListeners(session) )
+    }
+
+    static gameOverPage (session, gameLog) {
+        // adjust scoreboard in Display.buildPage
+        this.newPromise(Display.wipePanel())
+        .then( Display.buildPage(GameOverPage.initialView(session)) )
+        .then( GameOverPage.setListeners(session, gameLog) )
+    }
+
+    static highScoresPage (session) {
+        this.newPromise(Display.wipeAll())
+        .then( Display.buildPage(HighScoresPage.initialView(session)) )
+        .then( API.loadGameLogs(session) )
     }
 
 }
