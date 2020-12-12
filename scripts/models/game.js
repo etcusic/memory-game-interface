@@ -1,66 +1,65 @@
 class Game {
-    // Should I make instances of Game?? - 
-    // create GameLog class with instances -> then I can load a game log instance into Game class
-    constructor(){
-        this.deck = []
-        this.deckId = 0
-        this.timer = 60
+    
+    // side A or B needs to be added - applied @ Deck.shuffleAndSet
+    constructor(session, deck){
+        this.session = session
+        this.deck = deck
+        this.timer = 15
         this.score = 0
-        this.round = 0
-        this.question = ""
+        this.round = 1
+        this.quizCard = new Card (0, 0, 0) 
         this.currentCard = {}
-        this.cardDisplay = {}
-        // need to incorporate improvements here
-        this.userId = 1
-        this.level = 1
-        this.quit = false
+        this.end = false
+        // this.level = level
+    }
+
+    static wipeCards () {
+        document.querySelectorAll(".quizzers").forEach(cardNode => cardNode.removeChild(cardNode.children[0]))
+    }
+
+    static appendCards (cardsArray) {
+        cardsArray.forEach((card, index) => {
+            document.getElementById(`card-div-${index}`).appendChild(card.node)
+        })
     }
 
     sleep() {
         return new Promise(resolve => setTimeout(resolve, 1000));
     } 
 
-    static shuffle(array){
-        return array.sort(() => Math.random() - 0.5)
-    }
-
-    displayTerm() {
-        document.getElementById('term-value').innerText = this.currentCard.side_a
-    }
-
-    displayRound(){
-        this.currentCard = this.deck[this.round]
-        let thirtyOne = Game.shuffle(this.deck.filter(card => card !== this.currentCard))
-        let nine = Game.shuffle([this.currentCard, ...thirtyOne.slice(0, 8)])
-        this.question = this.currentCard.side_a
-        this.displayTerm()
-        displayNineCards(nine)
-    }
-
-    checkAnswer(answer){
-        const cardNode = answer.children[0]
-        if (this.question === cardNode.attributes[2].value){
-            cardNode.style.background = 'green'
+    checkAnswer(cardNode){
+        const answer = cardNode.children[0]
+        if (answer.value === document.getElementById('answer-card').innerText) {
             this.score += 1
         } else {
-            cardNode.style.background = 'red'
             this.score -= 1
         }
+        document.getElementById('score-value').innerText = this.score
+        this.timer = 15
+        // incorporate a pause and display after every answer
+        // create a correct and incorrect card and replace center card with that after every answer
         this.nextRound()
     }
 
     nextRound () {
         document.getElementById('score-value').innerHTML = this.score
         this.round += 1
-        wipeCards()
+        Game.wipeCards()
         this.displayRound()
     } 
 
-    async play(){
-        // set timer for each question rather than long countdown
+    displayRound(){
+        let cards = Deck.shuffle(this.deck.cards)
+        this.currentCard = cards.find(card => card.position === this.round)
+        this.quizCard.node.innerText = this.currentCard.node.value
+        let eightCards = [this.currentCard, ...cards.filter(card => card.position !== this.round).slice(0, 7)]
+        Game.appendCards([this.quizCard, ...Deck.shuffle(eightCards)])
+    }
+
+    async play(){ 
+        this.quizCard.node.setAttribute('id', 'answer-card')
         this.displayRound()
-        // need the check for game over to be faster than what it is
-        while ( !this.quit && this.timer > 0 && this.score < 2 ){ // this.round < this.deck.length ){
+        while ( !this.end && this.round < this.deck.cards.length ){ 
             this.timer -= 1
             document.getElementById('timer-value').innerHTML = this.timer
             await this.sleep()
@@ -70,31 +69,10 @@ class Game {
 
     gameOver() {
         console.log('game over')
+        this.end = true
         document.getElementById('term-value').innerText = "GAME OVER"
-        document.getElementById('game-container').replaceChild(GameOver.setDisplay(this.score), this.cardDisplay)
-        GameOver.resetPageButton({level: this.level, score: this.score, deck_id: this.deckId, user_id: this.userId}) 
-        delete this.cardDisplay
-        // clean this up - better way than global constant GAME
-        Object.assign(this, {deck: [], deckId: 0, timer: 60, score: 0, round: 0, question: "", currentCard: {}})
+        Game.wipeCards() 
+        Initialize.gameOverPage(this.session, {user_id: this.session.userId, deck_id: this.deck.id, score: this.score})
     }
-
-    // move this to class Initialize ???
-    static loadGame(deckId, deckArray){
-        console.log('game loaded')
-        GAME.deck = Game.shuffle(deckArray.map(x => new Card(x)))
-        GAME.deckId = deckId
-        GAME.cardDisplay = Display.nineCards()
-
-        document.getElementById('game-container').replaceChild(GAME.cardDisplay, document.getElementById('cards-wrapper'))
-        document.getElementById('timer-value').innerHTML = GAME.timer
-        document.getElementById('score-value').innerHTML = GAME.score
-        document.querySelectorAll(".quizzers").forEach(cardNode => cardNode.addEventListener('click', () => GAME.checkAnswer(cardNode)))
-    }
-
-    static quit () {
-        // need to pass in a game instance ?? - Session.currentGame ??
-        // or should this be an instance method ?? => this.quit = true
-        GAME.quit = true
-    }
-
+   
 }
