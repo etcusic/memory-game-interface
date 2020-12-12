@@ -1,32 +1,35 @@
 class API {
+    // ADD CATCHES !!!
 
     static loadMuppets () {
         fetch("http://localhost:3000/users")
         .then(resp => resp.json())
-        .then(data => infoToDropdown(data))
+        .then(muppetData => LandingPage.appendMuppets(muppetData))
+        .then(() => LandingPage.setListeners())
     }
 
-    static loadDecks() {
+    static loadDecks(session) {
         fetch("http://localhost:3000/decks")
         .then(resp => resp.json())
-        .then(data => decksToDropdown(data))
+        .then(deckInfo => BasePage.appendDecks(deckInfo))
+        .then(() => BasePage.setListeners(session))
     }
 
-    static loadSpecificDeck(id) {
-        fetch(`http://localhost:3000/decks/${id}/cards`)
+    static loadCards(deck, session) {
+        fetch(`http://localhost:3000/decks/${deck.id}/cards`)
         .then(resp => resp.json())
-        .then(deck => Game.loadGame(id, deck))
+        .then(cards => Initialize.game(deck, cards, session))
     }
 
-
-    static loadGameLogs(){
-        console.log('hello')
+    static loadGameLogs(session){
         fetch("http://localhost:3000/game_logs")
         .then(resp => resp.json())
-        .then(gameLogs => HighScores.applyList(gameLogs))
+        .then(gameLogs => HighScoresPage.appendHighScores(gameLogs))
+        .then(() => HighScoresPage.setListeners(session))
     }
 
     static uploadGameLog (gameLog) {
+        console.log(gameLog)
         const configObject = {
             method: 'POST',
             headers: {
