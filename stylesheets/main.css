@@ -1,6 +1,15 @@
 .three-percent {    margin-top: 3%  }
 #game-container { height: 1000px }
 
+#profile-photo {
+    float: left;
+    height: 195px;
+}
+
+#logo-photo {
+    float: right;
+}
+
 #header {
     margin-top: 0px;
     height: 195px;

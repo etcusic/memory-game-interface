@@ -1,10 +1,10 @@
 class Game {
     
     // side A or B needs to be added - applied @ Deck.shuffleAndSet
-    constructor(session, deck){
+    constructor (session, deck) {
         this.session = session
         this.deck = deck
-        this.timer = 15
+        this.timer = 10
         this.score = 0
         this.round = 1
         this.quizCard = new Card (0, 0, 0) 
@@ -23,22 +23,23 @@ class Game {
         })
     }
 
-    sleep() {
+    sleep () {
         return new Promise(resolve => setTimeout(resolve, 1000));
     } 
 
-    checkAnswer(cardNode){
+    checkAnswer (cardNode) {
         const answer = cardNode.children[0]
         if (answer.value === document.getElementById('answer-card').innerText) {
-            this.score += 1
+            this.score += this.timer
         } else {
-            this.score -= 1
+            this.score -= this.timer
         }
         document.getElementById('score-value').innerText = this.score
-        this.timer = 15
+        this.timer = 10
         // incorporate a pause and display after every answer
         // create a correct and incorrect card and replace center card with that after every answer
-        this.nextRound()
+        Initialize.newPromise(this.sleep)
+        .then(this.nextRound())
     }
 
     nextRound () {
@@ -48,7 +49,7 @@ class Game {
         this.displayRound()
     } 
 
-    displayRound(){
+    displayRound () {
         let cards = Deck.shuffle(this.deck.cards)
         this.currentCard = cards.find(card => card.position === this.round)
         this.quizCard.node.innerText = this.currentCard.node.value
@@ -56,7 +57,7 @@ class Game {
         Game.appendCards([this.quizCard, ...Deck.shuffle(eightCards)])
     }
 
-    async play(){ 
+    async play () { 
         this.quizCard.node.setAttribute('id', 'answer-card')
         this.displayRound()
         while ( !this.end && this.round < this.deck.cards.length ){ 
@@ -67,7 +68,7 @@ class Game {
         this.gameOver()
     }
 
-    gameOver() {
+    gameOver () {
         console.log('game over')
         this.end = true
         document.getElementById('term-value').innerText = "GAME OVER"
