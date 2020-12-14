@@ -18,6 +18,10 @@
     font-weight: bold;
 }
 
+.number {   
+    font-weight: bold;
+    font-size: 55px;
+}
 
 .scoreboard-words {
     margin-top: 2%;
