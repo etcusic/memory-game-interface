@@ -9,7 +9,7 @@ class BasePage {
 
     static panelHTML (session) {
         return `
-        <div class="panel row three-percent white-text"> 
+        <div class="panel row three-percent"> 
             <div id="muppet-name" class="center-align three-percent" value=${session.id}>${session.name}</div>
         </div> 
 
@@ -38,7 +38,7 @@ class BasePage {
                     </div>
                     <div class="card-content center-align light-blue lighten-2">
                         <div class="row">
-                            <div class="three percent col s8 center-align white-text muppet-name">OR SEE HIGH SCORES:</div>
+                            <div class="three percent col s8 center-align muppet-name">OR SEE HIGH SCORES:</div>
                             <div class="three-percent">
                                 <button id="scores-index-button" class="left btn-small purple lighten-2">HIGH SCORES</button>
                             </div> 

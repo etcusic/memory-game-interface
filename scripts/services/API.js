@@ -29,7 +29,6 @@ class API {
     }
 
     static uploadGameLog (gameLog) {
-        console.log(gameLog)
         const configObject = {
             method: 'POST',
             headers: {
@@ -46,6 +45,7 @@ class API {
             .then(function(json){
                 // do I need to do something with the data here ??
               console.log(json)
+              console.log("should I do something here??")
             })
             // add catch
     }
