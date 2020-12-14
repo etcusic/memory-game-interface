@@ -1,9 +1,9 @@
-Put summary and instructions here
+Rails API repo: https://github.com/etcusic/memory-game-api 
 
 CHECKLIST:
 
-[ ] Greeting Page
-[ ] Base Page
-[ ] High Scores Page
-[ ] Game Page
+[x] Greeting Page
+[x] Base Page
+[x] High Scores Page
+[x] Game Page
 [ ] Practice Page
