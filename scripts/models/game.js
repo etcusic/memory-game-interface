@@ -10,7 +10,7 @@ class Game {
         this.quizCard = new Card (0, 0, 0) 
         this.currentCard = {}
         this.end = false
-        // this.level = level
+        // this.level = level  // will need to go through and adjust where timer is hard coded in application
     }
 
     static wipeCards () {
@@ -64,6 +64,9 @@ class Game {
             this.timer -= 1
             document.getElementById('timer-value').innerHTML = this.timer
             await this.sleep()
+            if (this.timer === 0){
+                this.outOfTime()
+            }
         }
         this.gameOver()
     }
@@ -74,6 +77,12 @@ class Game {
         document.getElementById('term-value').innerText = "GAME OVER"
         Game.wipeCards() 
         Initialize.gameOverPage(this.session, {user_id: this.session.userId, deck_id: this.deck.id, score: this.score})
+    }
+
+    outOfTime () {
+        this.score -= 1
+        this.timer = 10
+        this.nextRound()
     }
    
 }
