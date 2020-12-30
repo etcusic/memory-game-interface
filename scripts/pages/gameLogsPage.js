@@ -1,4 +1,4 @@
-class HighScoresPage extends Page {
+class GameLogsPage extends Page {
 
     static initialize() {
 

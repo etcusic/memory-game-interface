@@ -1,4 +1,4 @@
-class BasePage extends Page {
+class OpeningPage extends Page {
 
     static initialize() {
 
