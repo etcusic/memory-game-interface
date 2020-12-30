@@ -25,6 +25,8 @@ CHECKLIST:
 [ ] Edit Deck page
 
 Additional Features:
+[ ] Refactor HTML fragments as their own components
+[ ] Create Page class to substitute Display class properties and set as parent class to pages
 [ ] Refactor pages directory - consolidate views, add initialize method, and move ActionListeners into the Page classes
 [ ] Be able to create new decks and cards
 [ ] Add a practice element to the application

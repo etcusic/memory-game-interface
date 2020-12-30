@@ -1,0 +1,7 @@
+class LandingPage {
+
+    static initialize() {
+
+    }
+
+}

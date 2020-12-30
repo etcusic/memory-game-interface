@@ -1,0 +1,7 @@
+class GamePage {
+
+    static initialize() {
+
+    }
+
+}

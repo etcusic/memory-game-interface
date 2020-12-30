@@ -1,0 +1,7 @@
+class HighScoresPage {
+
+    static initialize() {
+
+    }
+
+}
