@@ -1,0 +1,7 @@
+class Listener {
+
+    static openingPage () {
+        
+    }
+
+}
