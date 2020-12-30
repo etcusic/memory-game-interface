@@ -1,4 +1,4 @@
-class LandingPage {
+class LandingPage extends Page {
 
     static initialize() {
 
