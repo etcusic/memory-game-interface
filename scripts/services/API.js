@@ -41,9 +41,16 @@ class API {
     static loadGameLogs(session){
         fetch("http://localhost:3000/game_logs")
         .then(resp => resp.json())
-        .then(gameLogs => HighScoresPage.appendHighScores(gameLogs))
-        .then(() => HighScoresPage.setListeners(session))
+        .then(gameLogs => GameLogsPage.appendHighScores(gameLogs))
+        .then(() => SetListener.homePageButton(session))
     }
+
+    // static loadGameLogs(session){
+    //     fetch("http://localhost:3000/game_logs")
+    //     .then(resp => resp.json())
+    //     .then(gameLogs => HighScoresPage.appendHighScores(gameLogs))
+    //     .then(() => HighScoresPage.setListeners(session))
+    // }
 
     static uploadGameLog (gameLog) {
         const configObject = {

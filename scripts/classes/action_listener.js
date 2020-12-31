@@ -17,12 +17,6 @@ class ActionListener {
         }))
     }
 
-    static highScoresList (session) {
-        document.getElementById('scores-index-button').addEventListener('click', () => {
-            Initialize.highScoresPage(session)
-        })
-    }
-
     static quizCards (game) {
         document.querySelectorAll(".quizzers").forEach(cardWrapper => cardWrapper.addEventListener('click', () => game.checkAnswer(cardWrapper)))
     }

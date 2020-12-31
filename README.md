@@ -35,5 +35,6 @@ Additional Features:
 [ ] Inorporate different levels with scoring for the game
 [ ] Scope out high scores for different decks, levels, and users
 [ ] Incorporate rounds on the scoreboard during the game
+[ ] Display current users high scores after game
 [ ] Add a profile picture to page
 [ ] "Logout" button - wipe and log session & return to landing page

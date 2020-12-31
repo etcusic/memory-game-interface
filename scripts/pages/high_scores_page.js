@@ -45,8 +45,6 @@ class HighScoresPage {
     }
 
     static highScoreLi (index, gameLog) {
-        console.log(gameLog)
-        // this needs work - better display (maybe a table) and better data displayed
         return `
         <tr>
             <td>${index + 1}</td>
