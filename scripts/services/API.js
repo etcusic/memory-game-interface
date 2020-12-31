@@ -38,6 +38,12 @@ class API {
         .then(cards => Initialize.game(deck, cards, session))
     }
 
+    // static loadCards(deck, session) {
+    //     fetch(`http://localhost:3000/decks/${deck.id}/cards`)
+    //     .then(resp => resp.json())
+    //     .then(cards => Initialize.game(deck, cards, session))
+    // }
+
     static loadGameLogs(session){
         fetch("http://localhost:3000/game_logs")
         .then(resp => resp.json())

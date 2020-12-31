@@ -6,7 +6,6 @@ class Initialize {
 
     static session (id, name) {
         const newSession = new Session (id, name)
-        // this.beakerPage(newSession)
         OpeningPage.beaker(newSession)
     }
 
@@ -16,7 +15,7 @@ class Initialize {
         newGame.deck.cards = cards.map(card => new Card (card.id, card.side_a, card.side_b))
         newGame.deck.shuffleAndSet('A')
         session.game = newGame
-        Initialize.playSetPage(session)
+        GamePage.init(session)
     }
  
     static landingPage () {

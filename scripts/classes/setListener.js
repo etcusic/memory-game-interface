@@ -23,7 +23,7 @@ class SetListener {
         const decks = document.querySelectorAll('.decks-list')
         decks.forEach( deck => deck.addEventListener('click', () => {            
             let newDeck = new Deck (deck.value, deck.innerText)
-            API.loadCards(newDeck, session)  // this goes to Initialize.game() and then Initialize.playSetPage()
+            API.loadCards(newDeck, session)  // this goes to Initialize.game() and then GamePage.init()
         }))
     }
 
