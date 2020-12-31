@@ -1,9 +1,9 @@
 class GameLogsPage extends Page {
 
     static init(session) {
-        Initialize.newPromise(this.wipeAll())
-        .then(this.buildPage(this.initialView(session)))
-        .then(API.loadGameLogs(session))
+        this.wipeAll()
+        this.buildPage(this.initialView(session))
+        API.loadGameLogs(session)
     }
 
     static initialView (session) {

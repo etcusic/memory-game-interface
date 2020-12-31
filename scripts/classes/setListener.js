@@ -12,6 +12,13 @@ class SetListener {
         })
     }
 
+    static playGameButton (session) {
+        document.getElementById('play-game-button').addEventListener('click', () => {
+            Game.wipeCards()
+            GamePage.play(session)
+        })
+    }
+
     static muppetsList () {
         const muppets = document.querySelectorAll('.muppets-list')
         muppets.forEach(muppet => muppet.addEventListener('click', () => {

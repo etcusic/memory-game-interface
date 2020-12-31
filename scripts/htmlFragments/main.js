@@ -108,5 +108,51 @@ class Main {
         </tr>
         `
     }
-    
+
+    static scoreboard () {
+        return `
+        <div class="main row three-percent scoreboard">
+            <div class="col s8 push-s2">
+                <div id="scoreboard-timer" class="score-board row z-depth-4">
+                    <div class="col s12">
+                        <div class="right">
+                            <div id="timer">TIMER:</div> 
+                            <div id="timer-value" class="number center-align">0</div>
+                        </div>
+                        <div class="left">
+                            <div id="score">SCORE:</div> 
+                            <div id="score-value" class="number center-align">0</div> 
+                        </div>
+                        <div id="term" class="center-align">
+                            <div id="term-value" class="scoreboard-words"></div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    }
+
+    static cardDisplay () {
+        return `
+        <div class="main row" id="cards-wrapper">
+            <div id="nine-cards" class="col s10 push-s1">
+                <div id="quiz-row-1" class="row quiz-row">
+                    <div id="card-div-1" class="quizzers col s4"></div>
+                    <div id="card-div-2" class="quizzers col s4"></div>
+                    <div id="card-div-3" class="quizzers col s4"></div>
+                </div>
+                <div id="quiz-row-2" class="row quiz-row">
+                    <div id="card-div-4" class="quizzers col s4"></div>
+                    <div id="card-div-0" class="quizzers col s4"></div>
+                    <div id="card-div-5" class="quizzers col s4"></div>
+                </div>
+                <div id="quiz-row-3" class="row quiz-row">
+                    <div id="card-div-6" class="quizzers col s4"></div>
+                    <div id="card-div-7" class="quizzers col s4"></div>
+                    <div id="card-div-8" class="quizzers col s4"></div>
+                </div>
+            </div>
+        </div> `
+    }
+
 }

@@ -1,8 +1,8 @@
 class OpeningPage extends Page {
 
     static init() {
-        Initialize.newPromise(this.buildPage(this.initialView()))    
-        .then(API.loadMuppets())
+        this.buildPage(this.initialView())
+        API.loadMuppets()
     }
 
     static initialView () {
@@ -17,9 +17,9 @@ class OpeningPage extends Page {
     }
 
     static beaker (session) {
-        Initialize.newPromise(this.wipeAll())
-        .then( this.buildPage(this.beakerView(session)) )
-        .then( SetListener.homePageButton(session) )
+        this.wipeAll()
+        this.buildPage(this.beakerView(session)) 
+        SetListener.homePageButton(session) 
     }
 
     static beakerView (session) {

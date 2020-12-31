@@ -35,6 +35,7 @@ class ActionListener {
         })
     }
 
+    // copied
     static playGameButton (session) {
         document.getElementById('play-game-button').addEventListener('click', () => {
             Game.wipeCards()

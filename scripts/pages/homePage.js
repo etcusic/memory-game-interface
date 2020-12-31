@@ -1,9 +1,10 @@
 class HomePage extends Page {
 
     static init(session) {
-        Initialize.newPromise(this.wipeAll())
-        .then(this.buildPage(this.initialView(session)))
-        .then( API.loadDecks(session) )
+        this.wipeAll()
+        this.buildPage(this.initialView(session))
+        SetListener.scoresIndexButton(session)
+        API.loadDecks(session)
     }
 
     static initialView (session) {

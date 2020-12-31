@@ -19,10 +19,7 @@ class API {
         fetch("http://localhost:3000/decks")
         .then(resp => resp.json())
         .then(deckInfo => HomePage.appendDecks(deckInfo))
-        .then(() => {
-            SetListener.decksList(session)
-            SetListener.scoresIndexButton(session)
-        })
+        .then(() => SetListener.decksList(session))
     }
 
     // static loadDecks(session) {
@@ -32,17 +29,12 @@ class API {
     //     .then(() => BasePage.setListeners(session))
     // }
 
+    // kept the same
     static loadCards(deck, session) {
         fetch(`http://localhost:3000/decks/${deck.id}/cards`)
         .then(resp => resp.json())
         .then(cards => Initialize.game(deck, cards, session))
     }
-
-    // static loadCards(deck, session) {
-    //     fetch(`http://localhost:3000/decks/${deck.id}/cards`)
-    //     .then(resp => resp.json())
-    //     .then(cards => Initialize.game(deck, cards, session))
-    // }
 
     static loadGameLogs(session){
         fetch("http://localhost:3000/game_logs")
@@ -58,6 +50,7 @@ class API {
     //     .then(() => HighScoresPage.setListeners(session))
     // }
 
+    // kept the same
     static uploadGameLog (gameLog) {
         const configObject = {
             method: 'POST',
