@@ -21,4 +21,17 @@ class SidePanel {
         </div> `
     }
 
+    static decksUl () {
+        return `
+        <div class="panel row">
+            <div class="col s10 push-s1">
+                <ul id="decks-ul" class="collection z-depth-2"></ul>
+            </div>
+        </div> `
+    }
+
+    static deckLi (deck) {
+        return ` <li value=${deck.id} class="collection-item purple lighten-2 white-text decks-list ">${deck.title}</li> `
+    }
+
 }

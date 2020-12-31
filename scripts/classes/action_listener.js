@@ -1,5 +1,6 @@
 class ActionListener {
 
+    // SetListener.muppetsList()
     static muppetsList () {
         const muppets = document.querySelectorAll('.muppets-list')
         muppets.forEach(muppet => muppet.addEventListener('click', () => {
@@ -7,6 +8,7 @@ class ActionListener {
         }))
     }
 
+    // copied
     static decksList (session) {
         const decks = document.querySelectorAll('.decks-list')
         decks.forEach( deck => deck.addEventListener('click', () => {            
@@ -25,12 +27,14 @@ class ActionListener {
         document.querySelectorAll(".quizzers").forEach(cardWrapper => cardWrapper.addEventListener('click', () => game.checkAnswer(cardWrapper)))
     }
 
+    // SetListener.homePageButton(session)
     static basePageButton (session) {
         document.querySelector('.base-page-button').addEventListener('click', () => {
             Initialize.basePage(session)
         })
     }
 
+    // copied
     static scoresIndexButton (session) {
         document.getElementById('scores-index-button').addEventListener('click', () => {
             Initialize.highScoresPage(session)

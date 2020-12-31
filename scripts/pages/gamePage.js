@@ -1,7 +1,7 @@
 class GamePage extends Page {
 
-    static initialize() {
-
+    static init(session) {
+        Initialize.newPromise()
     }
 
 }

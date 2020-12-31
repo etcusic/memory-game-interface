@@ -18,9 +18,19 @@ class API {
     static loadDecks(session) {
         fetch("http://localhost:3000/decks")
         .then(resp => resp.json())
-        .then(deckInfo => BasePage.appendDecks(deckInfo))
-        .then(() => BasePage.setListeners(session))
+        .then(deckInfo => HomePage.appendDecks(deckInfo))
+        .then(() => {
+            SetListener.decksList(session)
+            SetListener.scoresIndexButton(session)
+        })
     }
+
+    // static loadDecks(session) {
+    //     fetch("http://localhost:3000/decks")
+    //     .then(resp => resp.json())
+    //     .then(deckInfo => BasePage.appendDecks(deckInfo))
+    //     .then(() => BasePage.setListeners(session))
+    // }
 
     static loadCards(deck, session) {
         fetch(`http://localhost:3000/decks/${deck.id}/cards`)
