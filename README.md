@@ -27,7 +27,7 @@ CHECKLIST:
 Additional Features:
 [x] Create Page class to substitute Display class properties and set as parent class to pages
 [x] Refactor pages directory - consolidate views, add initialize method
-[ ] Refactor HTML fragments as their own components
+[x] Refactor HTML fragments in their own class
 [ ] Be able to create new decks and cards
 [ ] Add a practice element to the application
 [ ] Allow user to choose side A or B to be quizzed on
@@ -38,3 +38,4 @@ Additional Features:
 [ ] Display current users high scores after game
 [ ] Add a profile picture to page
 [ ] "Logout" button - wipe and log session & return to landing page
+[ ] Refactor HTML fragments as their own components

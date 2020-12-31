@@ -1,5 +1,4 @@
 class API {
-    // ADD CATCHES !!!
 
     static loadMuppets () {
         fetch("http://localhost:3000/users")
@@ -8,13 +7,6 @@ class API {
         .then(() => SetListener.muppetsList())
     }
 
-    // static loadMuppets () {
-    //     fetch("http://localhost:3000/users")
-    //     .then(resp => resp.json())
-    //     .then(muppetData => LandingPage.appendMuppets(muppetData))
-    //     .then(() => LandingPage.setListeners())
-    // }
-
     static loadDecks(session) {
         fetch("http://localhost:3000/decks")
         .then(resp => resp.json())
@@ -22,14 +14,6 @@ class API {
         .then(() => SetListener.decksList(session))
     }
 
-    // static loadDecks(session) {
-    //     fetch("http://localhost:3000/decks")
-    //     .then(resp => resp.json())
-    //     .then(deckInfo => BasePage.appendDecks(deckInfo))
-    //     .then(() => BasePage.setListeners(session))
-    // }
-
-    // kept the same
     static loadCards(deck, session) {
         fetch(`http://localhost:3000/decks/${deck.id}/cards`)
         .then(resp => resp.json())
@@ -43,14 +27,6 @@ class API {
         .then(() => SetListener.homePageButton(session))
     }
 
-    // static loadGameLogs(session){
-    //     fetch("http://localhost:3000/game_logs")
-    //     .then(resp => resp.json())
-    //     .then(gameLogs => HighScoresPage.appendHighScores(gameLogs))
-    //     .then(() => HighScoresPage.setListeners(session))
-    // }
-
-    // kept the same
     static uploadGameLog (gameLog) {
         const configObject = {
             method: 'POST',
