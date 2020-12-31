@@ -24,8 +24,17 @@ class GamePage extends Page {
         SetListener.quitGameButton(session)
     }
 
-    static displayFinal (session) {
-        Initialize.newPromise(console.log('hello'))
+    static displayFinal (session, gameLog) {
+        this.wipeAll()
+        this.buildPage(this.finalDisplay(session))
+        SetListener.submitScoreButton(session, gameLog)
+    }
+
+    static finalDisplay(session){
+        return {
+            panel: [SidePanel.userName(session)],
+            main: [Main.gameOverDisplay(session)]
+        }
     }
 
 }

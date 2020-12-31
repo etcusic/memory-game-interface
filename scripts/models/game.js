@@ -76,7 +76,7 @@ class Game {
         this.end = true
         document.getElementById('term-value').innerText = "GAME OVER"
         Game.wipeCards() 
-        Initialize.gameOverPage(this.session, {user_id: this.session.userId, deck_id: this.deck.id, score: this.score})
+        GamePage.displayFinal(this.session, {user_id: this.session.userId, deck_id: this.deck.id, score: this.score})
     }
 
     outOfTime () {

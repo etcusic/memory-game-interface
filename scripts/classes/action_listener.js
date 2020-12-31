@@ -44,13 +44,14 @@ class ActionListener {
         })
     }
 
-    // quit game
+    // copied
     static quitGameButton (session) {
         document.getElementById('quit-game-button').addEventListener('click', () => {
             session.game.end = true
         })
     }
 
+    // copied
     static submitScoreButton (session, gameLog) {
         document.getElementById('submit-score-button').addEventListener('click', () => {
             delete session.game 

@@ -25,6 +25,14 @@ class SetListener {
         })
     }
 
+    static submitScoreButton (session, gameLog) {
+        document.getElementById('submit-score-button').addEventListener('click', () => {
+            delete session.game 
+            API.uploadGameLog(gameLog)
+            HomePage.init(session)
+        })
+    }
+
     static quizCards (game) {
         document.querySelectorAll(".quizzers").forEach(cardWrapper => cardWrapper.addEventListener('click', () => game.checkAnswer(cardWrapper)))
     }
