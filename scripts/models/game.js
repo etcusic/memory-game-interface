@@ -13,6 +13,20 @@ class Game {
         // this.level = level  // will need to go through and adjust where timer is hard coded in application
     }
 
+    async play () { 
+        this.quizCard.node.setAttribute('id', 'answer-card')
+        this.displayRound()
+        while ( !this.end && this.round < this.deck.cards.length ){ 
+            this.timer -= 1
+            document.getElementById('timer-value').innerHTML = this.timer
+            await this.sleep()
+            if (this.timer === 0){
+                this.outOfTime()
+            }
+        }
+        this.gameOver()
+    }
+
     static wipeCards () {
         document.querySelectorAll(".quizzers").forEach(cardNode => cardNode.removeChild(cardNode.children[0]))
     }
@@ -55,20 +69,6 @@ class Game {
         this.quizCard.node.innerText = this.currentCard.node.value
         let eightCards = [this.currentCard, ...cards.filter(card => card.position !== this.round).slice(0, 7)]
         Game.appendCards([this.quizCard, ...Deck.shuffle(eightCards)])
-    }
-
-    async play () { 
-        this.quizCard.node.setAttribute('id', 'answer-card')
-        this.displayRound()
-        while ( !this.end && this.round < this.deck.cards.length ){ 
-            this.timer -= 1
-            document.getElementById('timer-value').innerHTML = this.timer
-            await this.sleep()
-            if (this.timer === 0){
-                this.outOfTime()
-            }
-        }
-        this.gameOver()
     }
 
     gameOver () {

@@ -17,6 +17,7 @@ class ActionListener {
         }))
     }
 
+    // copied
     static quizCards (game) {
         document.querySelectorAll(".quizzers").forEach(cardWrapper => cardWrapper.addEventListener('click', () => game.checkAnswer(cardWrapper)))
     }
@@ -43,6 +44,7 @@ class ActionListener {
         })
     }
 
+    // quit game
     static quitGameButton (session) {
         document.getElementById('quit-game-button').addEventListener('click', () => {
             session.game.end = true

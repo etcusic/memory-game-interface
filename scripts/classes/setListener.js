@@ -19,6 +19,16 @@ class SetListener {
         })
     }
 
+    static quitGameButton (session) {
+        document.getElementById('quit-game-button').addEventListener('click', () => {
+            session.game.end = true
+        })
+    }
+
+    static quizCards (game) {
+        document.querySelectorAll(".quizzers").forEach(cardWrapper => cardWrapper.addEventListener('click', () => game.checkAnswer(cardWrapper)))
+    }
+
     static muppetsList () {
         const muppets = document.querySelectorAll('.muppets-list')
         muppets.forEach(muppet => muppet.addEventListener('click', () => {

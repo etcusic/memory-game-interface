@@ -17,7 +17,11 @@ class GamePage extends Page {
     }
 
     static play (session) {
-        Initialize.newPromise(console.log('hello'))
+        this.wipePanel()
+        this.buildPanel([SidePanel.userName(session), SidePanel.quitGameButton()])
+        session.game.play()
+        SetListener.quizCards(session.game)
+        SetListener.quitGameButton(session)
     }
 
     static displayFinal (session) {
