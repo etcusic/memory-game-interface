@@ -4,9 +4,16 @@ class API {
     static loadMuppets () {
         fetch("http://localhost:3000/users")
         .then(resp => resp.json())
-        .then(muppetData => LandingPage.appendMuppets(muppetData))
-        .then(() => LandingPage.setListeners())
+        .then(muppetData => OpeningPage.appendMuppets(muppetData))
+        .then(() => SetListener.muppetsList())
     }
+
+    // static loadMuppets () {
+    //     fetch("http://localhost:3000/users")
+    //     .then(resp => resp.json())
+    //     .then(muppetData => LandingPage.appendMuppets(muppetData))
+    //     .then(() => LandingPage.setListeners())
+    // }
 
     static loadDecks(session) {
         fetch("http://localhost:3000/decks")

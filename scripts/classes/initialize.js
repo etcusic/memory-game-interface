@@ -6,7 +6,8 @@ class Initialize {
 
     static session (id, name) {
         const newSession = new Session (id, name)
-        this.beakerPage(newSession)
+        // this.beakerPage(newSession)
+        OpeningPage.beaker(newSession)
     }
 
     static game (deck, cards, session) {

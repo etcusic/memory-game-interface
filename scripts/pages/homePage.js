@@ -1,7 +1,7 @@
 class HomePage extends Page {
 
-    static initialize() {
-
+    static init(session) {
+        console.log(session)
     }
 
 }
