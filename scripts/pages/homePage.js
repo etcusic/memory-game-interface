@@ -1,7 +1,7 @@
 class HomePage extends Page {
 
     static init(session) {
-        this.wipeAll()
+        this.wipeAll()   // wipeAll and bulidPage are in the Page parent class
         this.buildPage(this.initialView(session))
         SetListener.scoresIndexButton(session)
         API.loadDecks(session)
@@ -15,7 +15,7 @@ class HomePage extends Page {
     }
 
     static appendDecks (deckInfo) {
-        deckInfo.forEach( deck => document.getElementById('decks-ul').innerHTML += BasePage.deckLi(deck) )
+        deckInfo.forEach( deck => document.getElementById('decks-ul').innerHTML += SidePanel.deckLi(deck) )
     }
     
 }

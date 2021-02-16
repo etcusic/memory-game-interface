@@ -1,6 +1,7 @@
 class OpeningPage extends Page {
 
     static init() {
+        // buildPage() is from Page parent class
         this.buildPage(this.initialView())
         API.loadMuppets()
     }

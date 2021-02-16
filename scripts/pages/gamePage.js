@@ -1,7 +1,7 @@
 class GamePage extends Page {
 
     static init (session) {
-        this.wipeAll()
+        this.wipeAll()  // wipeAll and bulidPage are in the Page parent class
         this.buildPage(this.initialView(session))
         document.getElementById('term-value').innerText = session.game.deck.title
         document.querySelectorAll('.quizzers').forEach( div => div.appendChild(Card.blank()) )

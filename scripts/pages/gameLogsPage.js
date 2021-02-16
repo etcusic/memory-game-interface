@@ -14,7 +14,7 @@ class GameLogsPage extends Page {
     }
 
     static appendHighScores (gameLogs) {
-        gameLogs.forEach( (log, index) => document.getElementById('high-scores-table').innerHTML += HighScoresPage.highScoreLi(index, log) )
+        gameLogs.forEach( (log, index) => document.getElementById('high-scores-table').innerHTML += Main.highScoreLi(index, log) )
     }
 
 }
