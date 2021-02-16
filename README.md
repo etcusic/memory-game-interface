@@ -1,5 +1,7 @@
 Video breakdown: https://youtu.be/s1jilVl3tU8 
+
 Blog entry: https://etcusic.github.io/single_page_javascript_app_using_object_orientation 
+
 Rails API repo: https://github.com/etcusic/memory-game-api 
 
 Instructions:
