@@ -9,13 +9,13 @@ class HomePage extends Page {
 
     static initialView (session) {
         return {
-            panel: [SidePanel.userName(session), SidePanel.decksUl()],
-            main: [Main.openingBanner(), Main.optionsCard()]
+            panel: [userName(session), decksUl()],
+            main: [openingBanner(), optionsCard()]
         }
     }
 
     static appendDecks (deckInfo) {
-        deckInfo.forEach( deck => document.getElementById('decks-ul').innerHTML += SidePanel.deckLi(deck) )
+        deckInfo.forEach( deck => document.getElementById('decks-ul').innerHTML += deckLi(deck) )
     }
     
 }

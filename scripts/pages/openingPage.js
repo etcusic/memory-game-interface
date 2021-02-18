@@ -9,7 +9,7 @@ class OpeningPage extends Page {
     static initialView () {
         return { 
             panel: [muppetList()], 
-            main: [Main.kermitWelcome()] 
+            main: [kermitWelcome()] 
         }
     }
 
@@ -26,7 +26,7 @@ class OpeningPage extends Page {
     static beakerView (session) {
         return {
             panel: [userName(session)],
-            main: [Main.beakerDisplay()]
+            main: [beakerDisplay()]
         }
     }
 }

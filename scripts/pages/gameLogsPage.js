@@ -8,13 +8,13 @@ class GameLogsPage extends Page {
 
     static initialView (session) {
         return {
-            panel: [SidePanel.userName(session)],
-            main: [Main.scoresTable()]
+            panel: [userName(session)],
+            main: [scoresTable()]
         }
     }
 
     static appendHighScores (gameLogs) {
-        gameLogs.forEach( (log, index) => document.getElementById('high-scores-table').innerHTML += Main.highScoreLi(index, log) )
+        gameLogs.forEach( (log, index) => document.getElementById('high-scores-table').innerHTML += highScoreLi(index, log) )
     }
 
 }

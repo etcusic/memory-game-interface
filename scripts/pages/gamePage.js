@@ -11,14 +11,14 @@ class GamePage extends Page {
 
     static initialView (session) {
         return {
-            panel: [SidePanel.userName(session), SidePanel.playGameButton(), SidePanel.backButton()],
-            main: [Main.scoreboard(), Main.cardDisplay()]
+            panel: [userName(session), playGameButton(), backButton()],
+            main: [scoreboard(), cardDisplay()]
         }
     }
 
     static play (session) {
         this.wipePanel()
-        this.buildPanel([SidePanel.userName(session), SidePanel.quitGameButton()])
+        this.buildPanel([userName(session), quitGameButton()])
         session.game.play()
         SetListener.quizCards(session.game)
         SetListener.quitGameButton(session)
@@ -32,8 +32,8 @@ class GamePage extends Page {
 
     static finalDisplay(session){
         return {
-            panel: [SidePanel.userName(session)],
-            main: [Main.gameOverDisplay(session)]
+            panel: [userName(session)],
+            main: [gameOverDisplay(session)]
         }
     }
 
