@@ -8,7 +8,7 @@ class OpeningPage extends Page {
 
     static initialView () {
         return { 
-            panel: [SidePanel.muppetList()], 
+            panel: [muppetList()], 
             main: [Main.kermitWelcome()] 
         }
     }
