@@ -14,7 +14,7 @@ class OpeningPage extends Page {
     }
 
     static appendMuppets (muppetData) {
-        muppetData.forEach( muppet => document.getElementById('muppet-ul').innerHTML += SidePanel.muppetLi(muppet))
+        muppetData.forEach( muppet => document.getElementById('muppet-ul').innerHTML += muppetLi(muppet))
     }
 
     static beaker (session) {
@@ -25,7 +25,7 @@ class OpeningPage extends Page {
 
     static beakerView (session) {
         return {
-            panel: [SidePanel.userName(session)],
+            panel: [userName(session)],
             main: [Main.beakerDisplay()]
         }
     }
