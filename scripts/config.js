@@ -38,8 +38,3 @@ document.writeln("<script src='scripts/classes/setListener.js'></script>")
 document.writeln("<script src='scripts/services/API.js'></script>")
 
 document.writeln("<script type='text/javascript' src='scripts/index.js'></script>")
-
-
-
-
-
