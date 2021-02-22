@@ -1,4 +1,5 @@
 import { Page } from './page.js'
+import { SetListener } from '../classes/setListener.js'
 
 export class GamePage extends Page {
 

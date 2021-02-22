@@ -1,7 +1,8 @@
 import { Page } from './page.js'
+import { API } from '../services/API.js'
+import { SetListener } from '../classes/setListener.js'
 import { muppetList } from '../components/muppetList.js'
-import { kermitWelcome } from '../components/kermitWelcome.js'
-import { API } from '../services/API.js' 
+import { kermitWelcome } from '../components/kermitWelcome.js' 
 import { muppetLi } from '../components/muppetLi.js'
 
 
