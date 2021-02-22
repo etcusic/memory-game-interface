@@ -1,5 +1,8 @@
-import { OpeningPage } from '../pages/openingPage.js' // this is currently circular - is there a way to clean this up??
 import { SetListener } from '../classes/setListener.js'
+import { Initialize } from '../classes/initialize.js'
+import { OpeningPage } from '../pages/openingPage.js' // this is currently circular - is there a way to clean this up??
+import { HomePage } from '../pages/homePage.js'
+import { GameLogsPage } from '../pages/gameLogsPage.js'
 
 export class API {
 

@@ -1,3 +1,5 @@
+import { Page } from './page.js'
+
 export class GameLogsPage extends Page {
 
     static init(session) {
