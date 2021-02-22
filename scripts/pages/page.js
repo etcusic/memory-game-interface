@@ -1,4 +1,4 @@
-class Page {
+export class Page {
 
     static wipePanel () {
         document.querySelectorAll('.panel').forEach( node => node.remove() )

@@ -1,5 +1,14 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { practice } from "./practice.js"
+import { OpeningPage } from './pages/openingPage.js'
 
-    OpeningPage.init()
+practice()
 
-})
+OpeningPage.init()
+
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+
+    // OpeningPage.init()
+
+// })

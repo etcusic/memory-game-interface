@@ -1,4 +1,4 @@
-function muppetList () {
+export function muppetList () {
     return `
     <div class="panel row three-percent">
         <div class="three-percent col s10 push-s1">

@@ -1,6 +1,6 @@
 [x] Side panel components -> adjust code in each page class accordingly
 [x] Main section components -> adjust code in each page class accordingly
-[ ] Consolidate and import JS files into HTML page
-[ ] Write corresponding blog -> file imports
+[ ] Implement export/import into files
+[ ] Write corresponding blog -> React primer #2
 [ ] Change classes and services to functional modules
 [ ] Alter original blog post to demonstrate functional/modular style - get rid of classes

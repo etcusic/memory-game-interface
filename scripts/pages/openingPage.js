@@ -1,14 +1,18 @@
-class OpeningPage extends Page {
+import { Page } from './page.js'
+import { muppetList } from '../components/muppetList.js'
+import { kermitWelcome } from '../components/kermitWelcome.js'
+
+
+export class OpeningPage extends Page {
 
     static init() {
-        // buildPage() is from Page parent class
         this.buildPage(this.initialView())
         API.loadMuppets()
     }
 
     static initialView () {
         return { 
-            panel: [muppetList()], 
+            panel: [muppetList()],
             main: [kermitWelcome()] 
         }
     }
