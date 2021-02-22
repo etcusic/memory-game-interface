@@ -4,6 +4,8 @@ import { SetListener } from '../classes/setListener.js'
 import { muppetList } from '../components/muppetList.js'
 import { kermitWelcome } from '../components/kermitWelcome.js' 
 import { muppetLi } from '../components/muppetLi.js'
+import { userName } from '../components/userName.js'
+import { beakerDisplay } from '../components/beakerDisplay.js'
 
 
 export class OpeningPage extends Page {
