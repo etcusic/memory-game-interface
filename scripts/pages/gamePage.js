@@ -1,4 +1,4 @@
-class GamePage extends Page {
+export class GamePage extends Page {
 
     static init (session) {
         this.wipeAll()  // wipeAll and bulidPage are in the Page parent class

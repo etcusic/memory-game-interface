@@ -1,4 +1,4 @@
-class Deck {
+export class Deck {
 
     constructor (id, title) {
         this.id = id

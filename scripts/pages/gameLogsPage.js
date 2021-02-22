@@ -1,4 +1,4 @@
-class GameLogsPage extends Page {
+export class GameLogsPage extends Page {
 
     static init(session) {
         this.wipeAll()

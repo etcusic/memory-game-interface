@@ -1,4 +1,4 @@
-class Game {
+export class Game {
     
     // side A or B needs to be added - applied @ Deck.shuffleAndSet
     constructor (session, deck) {

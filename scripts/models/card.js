@@ -1,4 +1,4 @@
-class Card {
+export class Card {
 
     constructor (id, side_a, side_b) {
         this.id = id
