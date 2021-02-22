@@ -1,4 +1,7 @@
-class API {
+import { OpeningPage } from '../pages/openingPage.js' // this is currently circular - is there a way to clean this up??
+import { SetListener } from '../classes/setListener.js'
+
+export class API {
 
     static loadMuppets () {
         fetch("http://localhost:3000/users")

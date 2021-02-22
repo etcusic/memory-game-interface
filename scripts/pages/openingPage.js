@@ -1,6 +1,8 @@
 import { Page } from './page.js'
 import { muppetList } from '../components/muppetList.js'
 import { kermitWelcome } from '../components/kermitWelcome.js'
+import { API } from '../services/API.js' 
+import { muppetLi } from '../components/muppetLi.js'
 
 
 export class OpeningPage extends Page {

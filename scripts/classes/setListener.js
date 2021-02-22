@@ -1,4 +1,4 @@
-class SetListener {
+export class SetListener {
 
     static homePageButton (session) {
         document.querySelector('.base-page-button').addEventListener('click', () => {
