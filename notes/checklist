@@ -1,9 +1,6 @@
 [x] Side panel components -> adjust code in each page class accordingly
 [x] Main section components -> adjust code in each page class accordingly
-[ ] Consolidate all files into one and import into HTML page
-[ ] Switch pages from class structure to functional style of programming??
-[ ] 
-[ ] 
-[ ] 
-[ ] 
-[ ] 
+[ ] Consolidate and import JS files into HTML page
+[ ] Write corresponding blog -> file imports
+[ ] Change classes and services to functional modules
+[ ] Alter original blog post to demonstrate functional/modular style - get rid of classes
