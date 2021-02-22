@@ -1,4 +1,5 @@
 import { Initialize } from '../classes/initialize.js'
+import { Card } from './card.js'
 import { Deck } from './deck.js'
 import { GamePage } from '../pages/gamePage.js'
 

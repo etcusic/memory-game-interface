@@ -1,11 +1,13 @@
 import { Page } from './page.js'
 import { SetListener } from '../classes/setListener.js'
+import { Card } from '../models/card.js'
 import { userName } from '../components/userName.js'
 import { playGameButton } from '../components/playGameButton.js'
 import { backButton } from '../components/backButton.js'
 import { scoreboard } from '../components/scoreboard.js'
 import { cardDisplay } from '../components/cardDisplay.js'
 import { gameOverDisplay } from '../components/gameOverDisplay.js'
+import { quitGameButton } from '../components/quitGameButton.js'
 
 export class GamePage extends Page {
 
