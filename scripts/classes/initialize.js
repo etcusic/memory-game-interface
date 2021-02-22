@@ -1,3 +1,9 @@
+import { Session } from '../models/session.js'
+import { Game } from '../models/game.js'
+import { Card } from '../models/card.js'
+import { OpeningPage } from '../pages/openingPage.js'
+import { GamePage } from '../pages/gamePage.js'
+
 export class Initialize {
 
     static newPromise (myFunction) {
