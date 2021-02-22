@@ -1,3 +1,5 @@
+import { Card } from './card.js'
+
 export class Deck {
 
     constructor (id, title) {
@@ -6,7 +8,6 @@ export class Deck {
         this.cards = []
     }
 
-    // setter function ??
     createCards (cardsFromAPI) {
         this.cards = cardsFromAPI.map( card => new Card (card.id, card.side_a, card.side_b))
     }

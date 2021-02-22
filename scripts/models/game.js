@@ -1,3 +1,7 @@
+import { Initialize } from '../classes/initialize.js'
+import { Deck } from './deck.js'
+import { GamePage } from '../pages/gamePage.js'
+
 export class Game {
     
     // side A or B needs to be added - applied @ Deck.shuffleAndSet
