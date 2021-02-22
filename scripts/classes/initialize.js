@@ -1,4 +1,4 @@
-class Initialize {
+export class Initialize {
 
     static newPromise (myFunction) {
         return new Promise(() => myFunction)

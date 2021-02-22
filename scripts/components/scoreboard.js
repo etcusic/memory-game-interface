@@ -1,4 +1,4 @@
-function scoreboard () {
+export function scoreboard () {
     return `
     <div class="main row three-percent scoreboard">
         <div class="col s8 push-s2">

@@ -1,4 +1,4 @@
-function backButton () {
+export function backButton () {
     return `
     <div class="panel row">
         <div class="col s12 center-align">

@@ -1,4 +1,4 @@
-function gameOverDisplay (session) {
+export function gameOverDisplay (session) {
     return `            
     <div class="main row" id="game-over-container">
         <div class="col s6 push-s3 home-cards">

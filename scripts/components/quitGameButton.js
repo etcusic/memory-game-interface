@@ -1,4 +1,4 @@
-function quitGameButton () {
+export function quitGameButton () {
     return `
     <div class="panel row three-percent">
         <div class="col s12 center-align three-percent">

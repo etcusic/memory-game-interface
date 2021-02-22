@@ -1,4 +1,4 @@
-function beakerDisplay () {
+export function beakerDisplay () {
     return `
     <div class="main row three-percent">
         <div class="col s6 push-s3 home-cards">

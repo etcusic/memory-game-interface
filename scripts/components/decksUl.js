@@ -1,4 +1,4 @@
-function decksUl () {
+export function decksUl () {
     return `
     <div class="panel row">
         <div class="col s10 push-s1">

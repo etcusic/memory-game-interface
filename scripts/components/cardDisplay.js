@@ -1,4 +1,4 @@
-function cardDisplay () {
+export function cardDisplay () {
     return `
     <div class="main row" id="cards-wrapper">
         <div id="nine-cards" class="col s10 push-s1">

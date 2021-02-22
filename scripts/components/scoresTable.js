@@ -1,4 +1,4 @@
-function scoresTable () {
+export function scoresTable () {
     return `
     <div id="high-scores-container" class="main container purple lighten-2 white-text z-depth-4 three-percent">
         <div class="row" id="listymaker">

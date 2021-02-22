@@ -1,4 +1,4 @@
-function highScoreLi (index, gameLog) {
+export function highScoreLi (index, gameLog) {
     return `
     <tr>
         <td>${index + 1}</td>
