@@ -1,6 +1,11 @@
 import { Page } from './page.js'
 import { API } from '../services/API.js' 
 import { SetListener } from '../classes/setListener.js'
+import { userName } from '../components/userName.js'
+import { decksUl } from '../components/decksUl.js'
+import { openingBanner } from '../components/openingBanner.js'
+import { optionsCard } from '../components/optionsCard.js'
+import { deckLi } from '../components/deckLi.js'
 
 export class HomePage extends Page {
 
